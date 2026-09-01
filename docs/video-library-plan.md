@@ -138,3 +138,32 @@ Videos: `30VMIEmA114` (The Partnership In Education, the well-known
 Parent" Peske, a smell-sensitivity intervention video aimed at
 parents) - both found via real YouTube Data API search, reviewed by
 hand, and confirmed distinct from every other video ID in the library.
+
+## Batch 5 — meltdown vs. shutdown, and co-regulation
+
+Two more, from a third batch of external keyword-research topics the
+user reviewed - this one seeded with "difference between meltdown and
+shutdown" under a general "self-help" niche, which mostly returned
+generic productivity/self-help ideas with no connection to sensory
+processing (digital minimalism, networking, deep work, financial
+anxiety, habit architecture, self-compassion for perfectionists - all
+skipped as off-brand scope creep). Two ideas were genuinely on-topic:
+
+| # | Slug | Question | Category |
+|---|---|---|---|
+| 33 | `meltdown-vs-shutdown` | What is the difference between a meltdown and a shutdown? | `overwhelm` |
+| 34 | `co-regulation-for-parents` | What is co-regulation, and how can parents use it during overwhelm? | `overwhelm` |
+
+`meltdown-vs-shutdown` reframes "Decoding Nervous System Crashes: The
+Meltdown-vs-Shutdown Blueprint" away from the "blueprint" framing into a
+plain explainer - a real gap the library hadn't covered directly, even
+though several existing articles reference meltdowns individually.
+`co-regulation-for-parents` reframes "Emotional Regulation for
+Overwhelmed Parents" into a caregiver-facing piece on co-regulation
+specifically, rather than a generic parenting self-help article.
+
+Videos: `-P8mbzX8d1o` (Mom on the Spectrum, a channel already used
+elsewhere in the library) and `RRMBHQ-Bmk0` (the U.S. Administration
+for Children and Families, a credible government source) - both found
+via real YouTube Data API search and confirmed distinct from every
+other video ID in the library.

@@ -770,7 +770,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'The Partnership In Education',
       viewCountAtSelection: '1,912,668 (checked 2026-09-01)',
     },
-    relatedSlugs: ['why-pushing-and-squeezing-feels-calming', 'what-is-proprioception', 'how-to-set-up-a-low-stimulation-space', 'what-is-tactile-defensiveness'],
+    relatedSlugs: ['why-pushing-and-squeezing-feels-calming', 'what-is-proprioception', 'how-to-set-up-a-low-stimulation-space', 'what-is-tactile-defensiveness', 'meltdown-vs-shutdown'],
     faqs: [
       {
         question: 'Do these techniques only help during a full meltdown?',
@@ -806,6 +806,56 @@ export const libraryArticles: LibraryArticle[] = [
         question: 'Can someone be both sensitive to and drawn toward certain smells?',
         answer:
           'Yes. Avoiding certain overwhelming smells while seeking out a specific familiar or preferred smell is a common, non-contradictory pattern.',
+      },
+    ],
+  },
+  {
+    slug: 'meltdown-vs-shutdown',
+    title: 'What is the difference between a meltdown and a shutdown?',
+    dek: 'Both are responses to the same kind of overload, but they look almost opposite from the outside - and calling for different responses.',
+    category: 'overwhelm',
+    video: {
+      videoId: '-P8mbzX8d1o',
+      title: 'The Difference Between Autistic Meltdowns & Shutdowns',
+      channel: 'Mom on the Spectrum',
+      viewCountAtSelection: '136,884 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['co-regulation-for-parents', 'hand-based-grounding-techniques', 'how-to-set-up-a-low-stimulation-space', 'what-is-interoception'],
+    faqs: [
+      {
+        question: 'Is a shutdown less serious than a meltdown because it is quieter?',
+        answer:
+          'No. A shutdown reflects the same level of overload as a meltdown - it is just easier to miss or misread as something else, like tiredness or being withdrawn, because it is not disruptive.',
+      },
+      {
+        question: 'Does the same person always respond the same way?',
+        answer:
+          'Not necessarily. Which response happens can depend on the situation, the type of overload, and how much capacity someone has left that day - the same person can experience both at different times.',
+      },
+    ],
+  },
+  {
+    slug: 'co-regulation-for-parents',
+    title: 'What is co-regulation, and how can parents use it during overwhelm?',
+    dek: 'Why a dysregulated child usually needs a calm adult before they can calm down themselves, and what that looks like in the moment.',
+    category: 'overwhelm',
+    video: {
+      videoId: 'RRMBHQ-Bmk0',
+      title: 'Co-regulation: What It Is and Why it Matters',
+      channel: 'Administration for Children and Families (ACF)',
+      viewCountAtSelection: '158,260 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['meltdown-vs-shutdown', 'how-to-set-up-a-low-stimulation-space', 'building-body-awareness-as-an-adult'],
+    faqs: [
+      {
+        question: 'Is co-regulation only for young children?',
+        answer:
+          'It is most often discussed for young children, but older kids and even adults can benefit from a calmer person\'s presence during overwhelm - the underlying idea isn\'t strictly age-limited.',
+      },
+      {
+        question: 'Does co-regulation mean never letting a child learn to self-regulate?',
+        answer:
+          'No, it is generally understood as a foundation self-regulation is built on, not a replacement for it - a child leans on co-regulation more when younger or more overwhelmed, and less as those skills develop.',
       },
     ],
   },

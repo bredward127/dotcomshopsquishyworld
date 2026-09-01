@@ -31,6 +31,8 @@ import SensoryFriendlySleepRoutines from './content/sensory-friendly-sleep-routi
 import SensoryFriendlyTravelTips from './content/sensory-friendly-travel-tips';
 import HandBasedGroundingTechniques from './content/hand-based-grounding-techniques';
 import WhyCertainSmellsFeelOverwhelming from './content/why-certain-smells-feel-overwhelming';
+import MeltdownVsShutdown from './content/meltdown-vs-shutdown';
+import CoRegulationForParents from './content/co-regulation-for-parents';
 
 /**
  * Slug -> article body component.
@@ -73,4 +75,6 @@ export const libraryBodies: Record<string, ComponentType> = {
   'sensory-friendly-travel-tips': SensoryFriendlyTravelTips,
   'hand-based-grounding-techniques': HandBasedGroundingTechniques,
   'why-certain-smells-feel-overwhelming': WhyCertainSmellsFeelOverwhelming,
+  'meltdown-vs-shutdown': MeltdownVsShutdown,
+  'co-regulation-for-parents': CoRegulationForParents,
 };
