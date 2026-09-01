@@ -53,6 +53,27 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
+    label: 'Sensory Library',
+    href: '/library',
+    links: [
+      {
+        label: 'All articles',
+        href: '/library',
+        description: 'Plain-language answers to specific sensory questions.',
+      },
+      {
+        label: 'What is a sensory diet?',
+        href: '/library/what-is-a-sensory-diet',
+        description: 'The foundational concept the other library articles build on.',
+      },
+      {
+        label: 'What is proprioception?',
+        href: '/library/what-is-proprioception',
+        description: 'Deep pressure, heavy work, and why they help.',
+      },
+    ],
+  },
+  {
     label: 'Resources',
     href: '/resources',
     links: [

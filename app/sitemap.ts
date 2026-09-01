@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { navGroups, standaloneLinks, footerLinks } from '@/lib/nav';
 import { absoluteUrl } from '@/lib/site';
 import { providers } from '@/lib/directory/data';
+import { libraryArticles } from '@/lib/library/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = Array.from(
@@ -12,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...footerLinks.map((l) => l.href),
       // Real listings only. Example records are noindex and stay out.
       ...providers.filter((p) => !p.isExample).map((p) => `/providers/${p.slug}`),
+      '/library',
+      ...libraryArticles.map((a) => `/library/${a.slug}`),
     ]),
   );
 
