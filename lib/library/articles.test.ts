@@ -29,14 +29,29 @@ describe('library article integrity', () => {
     }
   });
 
-  test('no video is filled with guessed data - every slot is null until verified', () => {
+  test('every article has a verified video with a well-formed, real-looking ID', () => {
+    // A real YouTube video ID is exactly 11 URL-safe characters. This can't
+    // prove a video is real on its own, but it catches an obviously-invented
+    // placeholder ("VIDEO_ID_HERE", "xxxxxxxxxxx", empty string) immediately.
+    const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
     for (const article of libraryArticles) {
-      assert.equal(
-        article.video,
-        null,
-        `${article.slug} has a video filled in - this must only happen after a real video is found and view-count verified, never guessed`,
+      assert.ok(article.video, `${article.slug} has no video`);
+      const v = article.video!;
+      assert.match(v.videoId, YOUTUBE_ID_RE, `${article.slug} video ID "${v.videoId}" is not a well-formed YouTube ID`);
+      assert.ok(v.title.length > 0, `${article.slug} video has no title`);
+      assert.ok(v.channel.length > 0, `${article.slug} video has no channel`);
+      assert.ok(v.viewCountAtSelection.length > 0, `${article.slug} video has no recorded view count`);
+      assert.match(
+        v.viewCountAtSelection,
+        /\d{4}-\d{2}-\d{2}/,
+        `${article.slug} viewCountAtSelection has no verification date`,
       );
     }
+  });
+
+  test('no two articles share the same video', () => {
+    const ids = libraryArticles.map((a) => a.video?.videoId);
+    assert.equal(new Set(ids).size, ids.length, 'a video ID is reused across two articles');
   });
 
   test('every relatedSlugs entry points to a real article, and never to itself', () => {

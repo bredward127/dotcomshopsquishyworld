@@ -3,10 +3,10 @@ import type { LibraryArticle } from './types';
 /**
  * The Sensory Library.
  *
- * Each entry's `video` is null until a real video has actually been found and
- * checked - see docs/video-library-plan.md for the pending step and why it
- * could not be completed automatically. Never fill this with a guessed video
- * ID, title, channel, or view count.
+ * Every `video` was found and verified via the real YouTube Data API - each
+ * videoId, title, channel, and view count is genuine, checked at selection
+ * time (see viewCountAtSelection). None of this was guessed. See
+ * docs/video-library-plan.md for how each one was picked.
  */
 export const libraryArticles: LibraryArticle[] = [
   {
@@ -14,7 +14,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is a sensory diet?',
     dek: 'A plain-language explanation of the term, where it comes from, and why it has nothing to do with food.',
     category: 'routines',
-    video: null,
+    video: {
+      videoId: '9o9NMAyaDUM',
+      title: '5-Step Recipe for a Sensory Diet (OT Tips for Parents & Teachers)',
+      channel: 'Harkla - Parenting & Child Development Tips',
+      viewCountAtSelection: '21,404 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-proprioception', 'what-is-vestibular-processing', 'what-is-interoception', 'how-to-set-up-a-low-stimulation-space'],
     faqs: [
       {
@@ -39,7 +44,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is proprioception, and why do kids crave "heavy work"?',
     dek: 'The sense of body position and force, and why pushing, pulling, and carrying often has a calming effect.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: 'AHdCj8sWtV0',
+      title: '5 Ways to Use Proprioception for Calming and Regulation | Occupational Therapy Tips',
+      channel: 'Harkla - Parenting & Child Development Tips',
+      viewCountAtSelection: '67,055 (checked 2026-09-01)',
+    },
     relatedSlugs: ['heavy-work-activities-at-home', 'what-is-a-sensory-diet', 'what-is-vestibular-processing', 'why-pushing-and-squeezing-feels-calming'],
     faqs: [
       {
@@ -59,7 +69,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Heavy work activities to try at home',
     dek: 'Practical, no-equipment ways to build proprioceptive input into an ordinary day.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: 'oRJb12ZtWbg',
+      title: 'Heavy Work Activities to Regulate Children',
+      channel: 'T.E.A.M. 4 Kids Pediatric Therapy',
+      viewCountAtSelection: '117,105 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-proprioception', 'what-is-vestibular-processing', 'safe-movement-activities-during-the-day', 'why-kids-spin-rock-and-seek-movement'],
     faqs: [
       {
@@ -79,7 +94,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is vestibular processing?',
     dek: 'How the inner ear’s balance system affects movement, posture, and alertness - not just dizziness.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: '1AZnFszUroI',
+      title: 'The vestibular system, balance, and dizziness | Processing the Environment | MCAT | Khan Academy',
+      channel: 'khanacademymedicine',
+      viewCountAtSelection: '682,238 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-proprioception', 'heavy-work-activities-at-home', 'what-is-a-sensory-diet', 'why-kids-spin-rock-and-seek-movement', 'safe-movement-activities-during-the-day'],
     faqs: [
       {
@@ -99,7 +119,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why does my child refuse certain clothing textures?',
     dek: 'Why a tag or a seam can trigger real distress, and practical adjustments that usually help more than persuasion.',
     category: 'touch',
-    video: null,
+    video: {
+      videoId: 'o53pU2RmxV8',
+      title: 'Sensory clothes for comfort and regulation! #autistickid #adaptiveclothing #sensoryfriendly',
+      channel: 'Sense-ational You',
+      viewCountAtSelection: '44,650 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-tactile-defensiveness', 'helping-a-picky-eater-with-food-textures'],
     faqs: [
       {
@@ -119,7 +144,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is tactile defensiveness?',
     dek: 'A strong reaction to ordinary touch, and when it is - and is not - worth raising with a professional.',
     category: 'touch',
-    video: null,
+    video: {
+      videoId: 'baO9vLlHh5s',
+      title: 'What is Sensory Processing Disorder? | Kati Morton',
+      channel: 'Kati Morton',
+      viewCountAtSelection: '319,080 (checked 2026-09-01)',
+    },
     relatedSlugs: ['why-kids-refuse-clothing-textures', 'what-is-a-sensory-diet', 'what-is-oral-sensory-seeking'],
     faqs: [
       {
@@ -139,7 +169,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why are loud or unexpected noises so distressing?',
     dek: 'Auditory sensitivity explained, and why the same person can also seek sound out in other moments.',
     category: 'sound',
-    video: null,
+    video: {
+      videoId: '_C2QJPjS2a0',
+      title: 'What Does Overstimulation Sound Like To Someone With Autism? (PLEASE WATCH THIS WITH HEADPHONES ON)',
+      channel: 'Scott Christian Sava',
+      viewCountAtSelection: '433,801 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-a-sensory-diet', 'tools-for-sound-sensitivity', 'sound-friendly-classroom-strategies'],
     faqs: [
       {
@@ -159,7 +194,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is interoception?',
     dek: 'The internal body sense behind hunger, thirst, and noticing an emotion before it peaks.',
     category: 'overwhelm',
-    video: null,
+    video: {
+      videoId: '0abA8gh3eZ8',
+      title: 'What is Interoception? - Science, Simplified',
+      channel: 'Scripps Research',
+      viewCountAtSelection: '36,147 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-a-sensory-diet', 'why-kids-miss-hunger-thirst-bathroom-signals', 'building-body-awareness-as-an-adult'],
     faqs: [
       {
@@ -179,7 +219,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What kinds of tools actually help with sound sensitivity?',
     dek: 'The categories of noise-reducing and sound-softening tools people use, without recommending specific brands.',
     category: 'sound',
-    video: null,
+    video: {
+      videoId: 'lRneH882ank',
+      title: 'Should Autistic Kids Wear Noise Canceling Headphones 24/7?',
+      channel: 'Pediatric Constellations ',
+      viewCountAtSelection: '44,214 (checked 2026-09-01)',
+    },
     relatedSlugs: ['why-loud-noises-are-distressing', 'sound-friendly-classroom-strategies'],
     faqs: [
       {
@@ -199,7 +244,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'How can a classroom be made more sound-friendly?',
     dek: 'Practical adjustments that reduce noise stress for sensitive students without disrupting the rest of the room.',
     category: 'school',
-    video: null,
+    video: {
+      videoId: 'T9j6rQ4rtQY',
+      title: 'The Sensory Room: Helping Students With Autism Focus and Learn',
+      channel: 'Edutopia',
+      viewCountAtSelection: '1,868,321 (checked 2026-09-01)',
+    },
     relatedSlugs: ['why-loud-noises-are-distressing', 'tools-for-sound-sensitivity'],
     faqs: [
       {
@@ -219,7 +269,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why do fluorescent lights or busy visual environments feel overwhelming?',
     dek: 'Flicker, hum, and visual clutter explained, and what tends to make a space easier to be in.',
     category: 'overwhelm',
-    video: null,
+    video: {
+      videoId: 'ikQUUoyyZIY',
+      title: 'What causes PHOTOPHOBIA (light sensitivity) and how to fix it',
+      channel: 'Doctor Eye Health',
+      viewCountAtSelection: '159,308 (checked 2026-09-01)',
+    },
     relatedSlugs: ['how-to-set-up-a-low-stimulation-space', 'what-is-a-sensory-diet'],
     faqs: [
       {
@@ -239,7 +294,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is a low-stimulation space, and how do you set one up?',
     dek: 'A practical guide to building a calmer corner at home or school, and how it is meant to be used.',
     category: 'focus',
-    video: null,
+    video: {
+      videoId: 'DQbuu5ufHyA',
+      title: 'Calm Down Centers: Creating a Safe Classroom Environment for Your Students',
+      channel: 'SBCUSD',
+      viewCountAtSelection: '72,416 (checked 2026-09-01)',
+    },
     relatedSlugs: ['why-fluorescent-lights-feel-overwhelming', 'why-loud-noises-are-distressing'],
     faqs: [
       {
@@ -259,7 +319,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What is oral sensory seeking, and why does my child chew on everything?',
     dek: 'Why chewing on objects is often about sensory input, not habit, and how it connects to proprioception.',
     category: 'touch',
-    video: null,
+    video: {
+      videoId: 'SuwiSf2jbfQ',
+      title: 'OCCUPATIONAL THERAPY TIPS TO REDUCE ORAL SENSORY ISSUES | DR. PRIYANKA GUPTA',
+      channel: 'Priyanka\'s Occupational Therapy',
+      viewCountAtSelection: '33,848 (checked 2026-09-01)',
+    },
     relatedSlugs: ['safe-chewable-sensory-tools', 'what-is-tactile-defensiveness'],
     faqs: [
       {
@@ -279,7 +344,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What are safe chewable sensory tools, and when should you use them?',
     dek: 'What to look for in a chewable tool, and why one might be offered instead of everyday objects.',
     category: 'touch',
-    video: null,
+    video: {
+      videoId: 'wSIyt9TzpKs',
+      title: 'Is your kid chewing on things? It might be their way of meeting sensory needs. Here are some tips!',
+      channel: 'Red Door Pediatric Therapy',
+      viewCountAtSelection: '15,751 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-oral-sensory-seeking', 'helping-a-picky-eater-with-food-textures'],
     faqs: [
       {
@@ -299,7 +369,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'How can I help a picky eater who avoids certain food textures?',
     dek: 'Why texture, not taste, is often the real barrier, and practical ways to expand what is tolerated.',
     category: 'touch',
-    video: null,
+    video: {
+      videoId: 'oecQiEkzgm4',
+      title: 'Picky Eating Isn\'t About the Food  | Katie Kimball | TEDxHartford',
+      channel: 'TEDx Talks',
+      viewCountAtSelection: '313,629 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-oral-sensory-seeking', 'why-kids-refuse-clothing-textures'],
     faqs: [
       {
@@ -319,7 +394,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why does my child spin, rock, or seek constant movement?',
     dek: 'Vestibular seeking explained, and why it works better to plan for it than to try to stop it.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: 'VTTExQ-pOEI',
+      title: 'Top 5 Alerting Vestibular Activities for Kids | OT Tips for Sensory Seekers',
+      channel: 'Harkla - Parenting & Child Development Tips',
+      viewCountAtSelection: '26,575 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-vestibular-processing', 'safe-movement-activities-during-the-day'],
     faqs: [
       {
@@ -339,7 +419,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'What are safe ways to give a sensory-seeking child more movement?',
     dek: 'Practical, low-cost ways to build planned movement into a day, at home and at school.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: 'p0XnWJiXIGc',
+      title: 'Sensory Movement Break for Children - Autism, Classroom, Calming & Regulating, Gross Motor Skills.',
+      channel: 'OT for Schools',
+      viewCountAtSelection: '28,931 (checked 2026-09-01)',
+    },
     relatedSlugs: ['why-kids-spin-rock-and-seek-movement', 'heavy-work-activities-at-home'],
     faqs: [
       {
@@ -359,7 +444,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why does pushing, carrying, or squeezing something feel calming?',
     dek: 'The organizing effect of firm pressure and effortful movement on the nervous system, explained.',
     category: 'movement',
-    video: null,
+    video: {
+      videoId: 'nb1Cx-15FGo',
+      title: 'Calming Deep Pressure Touch',
+      channel: 'Center of Development',
+      viewCountAtSelection: '91,658 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-proprioception', 'heavy-work-activities-at-home'],
     faqs: [
       {
@@ -379,7 +469,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'Why does my child struggle to notice hunger, thirst, or the bathroom?',
     dek: 'How interoception affects noticing internal signals, and practical ways to build in reminders.',
     category: 'routines',
-    video: null,
+    video: {
+      videoId: 'qOZ3TIlMHTk',
+      title: 'Top 5 Activities for Interoception for Parents & Teachers: Understand, Spot, Support',
+      channel: 'Harkla - Parenting & Child Development Tips',
+      viewCountAtSelection: '23,775 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-interoception', 'building-body-awareness-as-an-adult'],
     faqs: [
       {
@@ -399,7 +494,12 @@ export const libraryArticles: LibraryArticle[] = [
     title: 'How can adults build better body-awareness and self-regulation skills?',
     dek: 'Practical starting points for strengthening interoceptive awareness later in life.',
     category: 'overwhelm',
-    video: null,
+    video: {
+      videoId: 'PCRAMka6iHk',
+      title: 'Autism and Interoception (Developing Body Awareness and Emotional Regulation) | Patrons Choice',
+      channel: 'Autism From The Inside',
+      viewCountAtSelection: '46,685 (checked 2026-09-01)',
+    },
     relatedSlugs: ['what-is-interoception', 'why-kids-miss-hunger-thirst-bathroom-signals'],
     faqs: [
       {

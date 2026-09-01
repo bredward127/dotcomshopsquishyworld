@@ -1,9 +1,7 @@
 # Sensory Library — plan and status
 
-## The 20-question master list
-
-All 20 are now written and live at `/library/[slug]`, organized by sensory
-channel (Wilbarger model).
+All 20 articles are written, cross-linked, and live at `/library/[slug]`,
+each with a real, verified video embedded.
 
 | # | Slug | Question |
 |---|---|---|
@@ -28,32 +26,30 @@ channel (Wilbarger model).
 | 19 | `why-kids-miss-hunger-thirst-bathroom-signals` | Why does my child struggle to notice hunger, thirst, or the bathroom? |
 | 20 | `building-body-awareness-as-an-adult` | How can adults build better body-awareness and self-regulation skills? |
 
-## Video status — action needed
+## Videos
 
-**None of the 20 articles have a video yet.** Every `video` field in
-`lib/library/articles.ts` is `null`, and `VideoSlot` renders an honest
-"not chosen yet" placeholder on every page instead.
+Every video was found via a real search against the YouTube Data API
+(`googleapis.com` - reachable from this environment, unlike `youtube.com`
+itself) using the `YOUTUBE_API_KEY` supplied directly in chat, never
+committed anywhere. For each topic, candidates were pulled with view
+counts, then the actual titles and channels were reviewed by hand and the
+most topically precise, appropriately-sourced match was picked - not
+simply the highest view count. A few times that meant passing over the
+top result: a "fluorescent lights" search returned an unrelated decorative
+LED-lights video as the top hit, and several searches returned branded
+product-demo videos (e.g. a specific earplug or chew-toy brand) that were
+skipped in favor of educational content, since the articles themselves
+say they don't recommend specific products. No two articles share the
+same video.
 
-Per the latest instruction, videos no longer need a 100k+ view threshold -
-any real, relevant video is fine. What still isn't negotiable: no guessed
-video ID, title, channel, or fabricated data. Confirmed this session:
-`googleapis.com` (the actual YouTube Data API) is reachable from this
-environment - it returned a genuine "API key not valid" response rather
-than a network block - so a real key unlocks real search and verification
-directly from here. `youtube.com` itself (browsing, oEmbed) stays blocked.
+`videoId`, `title`, `channel`, and `viewCountAtSelection` (with the date
+checked) are recorded on every entry in `lib/library/articles.ts`. Videos
+render via `youtube-nocookie.com` embeds, with the channel credited and a
+line stating the video is independent of this site and its presence isn't
+an endorsement.
 
-### To close this out
+## What's in place
 
-Paste the `YOUTUBE_API_KEY` value in chat (already set in Vercel, but that
-copy isn't visible to this session). Once supplied, each of the 20 articles
-gets a real search against the YouTube Data API, a genuine video ID, title,
-and channel name filled in, and the placeholder replaced with a real
-embed - no guessing, no invented data.
-
-## What's already in place either way
-
-Route structure, internal link mesh (each article cross-links 2-4 related
-articles plus relevant non-library pages), SEO metadata, `Article` JSON-LD,
-sitemap entries (21: the index plus all 20 articles), and nav are all built
-and live regardless of the video question - all 20 articles are complete
-and published as text-only until videos are added.
+Route structure, internal link mesh, SEO metadata, `Article` JSON-LD,
+sitemap entries (21: the index plus all 20 articles), nav, and now video
+embeds - the Sensory Library section is complete end to end.
