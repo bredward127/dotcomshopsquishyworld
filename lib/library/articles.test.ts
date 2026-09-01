@@ -8,8 +8,8 @@ import { CATEGORY_IDS } from '../ask/taxonomy.ts';
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 describe('library article integrity', () => {
-  test('ships all 30 articles from the master plan', () => {
-    assert.equal(libraryArticles.length, 30);
+  test('ships all 32 articles from the master plan', () => {
+    assert.equal(libraryArticles.length, 32);
   });
 
   test('every slug is unique and URL-safe', () => {

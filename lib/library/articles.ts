@@ -175,7 +175,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Scott Christian Sava',
       viewCountAtSelection: '433,801 (checked 2026-09-01)',
     },
-    relatedSlugs: ['what-is-a-sensory-diet', 'tools-for-sound-sensitivity', 'sound-friendly-classroom-strategies'],
+    relatedSlugs: ['what-is-a-sensory-diet', 'tools-for-sound-sensitivity', 'sound-friendly-classroom-strategies', 'why-certain-smells-feel-overwhelming'],
     faqs: [
       {
         question: 'Is this the same as just disliking loud noise?',
@@ -450,7 +450,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Center of Development',
       viewCountAtSelection: '91,658 (checked 2026-09-01)',
     },
-    relatedSlugs: ['what-is-proprioception', 'heavy-work-activities-at-home'],
+    relatedSlugs: ['what-is-proprioception', 'heavy-work-activities-at-home', 'hand-based-grounding-techniques'],
     faqs: [
       {
         question: 'Is this effect specific to sensory processing differences?',
@@ -756,6 +756,56 @@ export const libraryArticles: LibraryArticle[] = [
         question: 'Is it worth planning recovery time after a trip?',
         answer:
           'Often yes. Travel adds up sensory load even when nothing goes wrong, and a day with no obligations right after returning tends to help more than moving straight into a full schedule.',
+      },
+    ],
+  },
+  {
+    slug: 'hand-based-grounding-techniques',
+    title: 'What are hand-based grounding techniques, and why do they work?',
+    dek: 'Why touch is often the fastest way back to the present moment during overwhelm, and a few specific techniques worth trying.',
+    category: 'overwhelm',
+    video: {
+      videoId: '30VMIEmA114',
+      title: 'The 5-4-3-2-1 Method: A Grounding Exercise to Manage Anxiety',
+      channel: 'The Partnership In Education',
+      viewCountAtSelection: '1,912,668 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['why-pushing-and-squeezing-feels-calming', 'what-is-proprioception', 'how-to-set-up-a-low-stimulation-space', 'what-is-tactile-defensiveness'],
+    faqs: [
+      {
+        question: 'Do these techniques only help during a full meltdown?',
+        answer:
+          'They tend to work better used early, before overwhelm has fully taken hold, though many people also reach for them once things have already escalated.',
+      },
+      {
+        question: 'Is the 5-4-3-2-1 method specific to sensory processing?',
+        answer:
+          'No, it is a widely used general grounding technique. It is included here because the touch step in particular tends to work well for people with sensory sensitivities.',
+      },
+    ],
+  },
+  {
+    slug: 'why-certain-smells-feel-overwhelming',
+    title: 'Why do certain smells feel so overwhelming?',
+    dek: 'Smell sensitivity explained, why it can hit harder than other senses, and practical ways to plan around it.',
+    category: 'overwhelm',
+    video: {
+      videoId: 'TJtoYAqqDSw',
+      title: 'Smell Sensitivity Intervention for Kids with Sensory Processing Issues',
+      channel: 'Nancy "Sensory Smart Parent" Peske',
+      viewCountAtSelection: '1,666 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['why-loud-noises-are-distressing', 'why-fluorescent-lights-feel-overwhelming', 'what-is-a-sensory-diet'],
+    faqs: [
+      {
+        question: 'Is smell sensitivity usually the only sensitivity someone has?',
+        answer:
+          'Not typically. It is common for smell sensitivity to show up alongside sensitivity to sound, light, or texture, rather than appear entirely on its own.',
+      },
+      {
+        question: 'Can someone be both sensitive to and drawn toward certain smells?',
+        answer:
+          'Yes. Avoiding certain overwhelming smells while seeking out a specific familiar or preferred smell is a common, non-contradictory pattern.',
       },
     ],
   },

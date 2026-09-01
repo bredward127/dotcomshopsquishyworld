@@ -106,3 +106,35 @@ topical fit rather than picking the top result. The sleep video
 (`gRy6BlrBgpQ`, Harkla) and travel video (`RnnxEw0sb3w`, Kaelynn Partlow)
 are both distinct from every other video ID used across the library -
 checked programmatically before this batch's commit.
+
+## Batch 4 — grounding techniques and smell sensitivity
+
+Two more, from a second batch of external keyword-research topics the
+user reviewed. Most of that list was redundant with content already
+built (sleep, travel, vestibular health, low-stimulation spaces, noise
+sensitivity) or too wellness-trend/product-flavored to fit the site
+("Somatosensory Yoga: Healing Through Movement," "Olfactory Healing:
+Essential Oils for Nervous System Balance," "The Nervous System Reset
+Nutrition Guide," "The Sensory Parenting Emergency Manual"). Two topics
+were genuinely new and safely scoped once reframed away from that
+framing:
+
+| # | Slug | Question | Category |
+|---|---|---|---|
+| 31 | `hand-based-grounding-techniques` | What are hand-based grounding techniques, and why do they work? | `overwhelm` |
+| 32 | `why-certain-smells-feel-overwhelming` | Why do certain smells feel so overwhelming? | `overwhelm` |
+
+`hand-based-grounding-techniques` reframes "Tactile Therapy: Hand-Based
+Grounding Techniques" away from a "therapy" claim into a plain
+description of a real, common self-regulation strategy. `why-certain-
+smells-feel-overwhelming` reframes "Olfactory Healing: Essential Oils
+for Nervous System Balance" away from essential-oils wellness framing
+entirely into a smell-sensitivity article - the same kind of piece as
+the existing sound and light articles, for a sensory channel the
+library hadn't covered yet.
+
+Videos: `30VMIEmA114` (The Partnership In Education, the well-known
+5-4-3-2-1 grounding method) and `TJtoYAqqDSw` (Nancy "Sensory Smart
+Parent" Peske, a smell-sensitivity intervention video aimed at
+parents) - both found via real YouTube Data API search, reviewed by
+hand, and confirmed distinct from every other video ID in the library.

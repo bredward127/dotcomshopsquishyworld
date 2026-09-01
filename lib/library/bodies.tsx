@@ -29,6 +29,8 @@ import AdultSensoryAssessmentWhatToExpect from './content/adult-sensory-assessme
 import SensoryFriendlyDailyRoutinesForAdults from './content/sensory-friendly-daily-routines-for-adults';
 import SensoryFriendlySleepRoutines from './content/sensory-friendly-sleep-routines';
 import SensoryFriendlyTravelTips from './content/sensory-friendly-travel-tips';
+import HandBasedGroundingTechniques from './content/hand-based-grounding-techniques';
+import WhyCertainSmellsFeelOverwhelming from './content/why-certain-smells-feel-overwhelming';
 
 /**
  * Slug -> article body component.
@@ -69,4 +71,6 @@ export const libraryBodies: Record<string, ComponentType> = {
   'sensory-friendly-daily-routines-for-adults': SensoryFriendlyDailyRoutinesForAdults,
   'sensory-friendly-sleep-routines': SensoryFriendlySleepRoutines,
   'sensory-friendly-travel-tips': SensoryFriendlyTravelTips,
+  'hand-based-grounding-techniques': HandBasedGroundingTechniques,
+  'why-certain-smells-feel-overwhelming': WhyCertainSmellsFeelOverwhelming,
 };
