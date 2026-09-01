@@ -7,6 +7,18 @@ import WhyKidsRefuseClothingTextures from './content/why-kids-refuse-clothing-te
 import WhatIsTactileDefensiveness from './content/what-is-tactile-defensiveness';
 import WhyLoudNoisesAreDistressing from './content/why-loud-noises-are-distressing';
 import WhatIsInteroception from './content/what-is-interoception';
+import ToolsForSoundSensitivity from './content/tools-for-sound-sensitivity';
+import SoundFriendlyClassroomStrategies from './content/sound-friendly-classroom-strategies';
+import WhyFluorescentLightsFeelOverwhelming from './content/why-fluorescent-lights-feel-overwhelming';
+import HowToSetUpALowStimulationSpace from './content/how-to-set-up-a-low-stimulation-space';
+import WhatIsOralSensorySeeking from './content/what-is-oral-sensory-seeking';
+import SafeChewableSensoryTools from './content/safe-chewable-sensory-tools';
+import HelpingAPickyEaterWithFoodTextures from './content/helping-a-picky-eater-with-food-textures';
+import WhyKidsSpinRockAndSeekMovement from './content/why-kids-spin-rock-and-seek-movement';
+import SafeMovementActivitiesDuringTheDay from './content/safe-movement-activities-during-the-day';
+import WhyPushingAndSqueezingFeelsCalming from './content/why-pushing-and-squeezing-feels-calming';
+import WhyKidsMissHungerThirstBathroomSignals from './content/why-kids-miss-hunger-thirst-bathroom-signals';
+import BuildingBodyAwarenessAsAnAdult from './content/building-body-awareness-as-an-adult';
 
 /**
  * Slug -> article body component.
@@ -25,4 +37,16 @@ export const libraryBodies: Record<string, ComponentType> = {
   'what-is-tactile-defensiveness': WhatIsTactileDefensiveness,
   'why-loud-noises-are-distressing': WhyLoudNoisesAreDistressing,
   'what-is-interoception': WhatIsInteroception,
+  'tools-for-sound-sensitivity': ToolsForSoundSensitivity,
+  'sound-friendly-classroom-strategies': SoundFriendlyClassroomStrategies,
+  'why-fluorescent-lights-feel-overwhelming': WhyFluorescentLightsFeelOverwhelming,
+  'how-to-set-up-a-low-stimulation-space': HowToSetUpALowStimulationSpace,
+  'what-is-oral-sensory-seeking': WhatIsOralSensorySeeking,
+  'safe-chewable-sensory-tools': SafeChewableSensoryTools,
+  'helping-a-picky-eater-with-food-textures': HelpingAPickyEaterWithFoodTextures,
+  'why-kids-spin-rock-and-seek-movement': WhyKidsSpinRockAndSeekMovement,
+  'safe-movement-activities-during-the-day': SafeMovementActivitiesDuringTheDay,
+  'why-pushing-and-squeezing-feels-calming': WhyPushingAndSqueezingFeelsCalming,
+  'why-kids-miss-hunger-thirst-bathroom-signals': WhyKidsMissHungerThirstBathroomSignals,
+  'building-body-awareness-as-an-adult': BuildingBodyAwarenessAsAnAdult,
 };
