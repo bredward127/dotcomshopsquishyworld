@@ -4,19 +4,10 @@ import { useRef, useState } from 'react';
 import { AUDIENCES, CATEGORIES, type AudienceId, type CategoryId } from '@/lib/ask/taxonomy';
 import { MAX_QUESTION_LENGTH } from '@/lib/ask/safety';
 import type { AnswerPayload } from '@/lib/ask/types';
+import { track } from '@/lib/analytics/track';
 import { NotMedicalAdvice, NoEmergencyUse, PrivacyNotice } from './SafetyBanner';
 import AnswerPanel from './AnswerPanel';
 
-/**
- * Records that a question was routed, using only the category.
- * The typed question is never included — no free text is sent to analytics.
- */
-function trackCategoryOnly(category: CategoryId | null) {
-  if (typeof window === 'undefined' || !category) return;
-  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
-  if (typeof gtag !== 'function') return;
-  gtag('event', 'ask_topic_selected', { topic: category });
-}
 
 export default function AskForm({ aiEnabled }: { aiEnabled: boolean }) {
   const [audience, setAudience] = useState<AudienceId | ''>('');
@@ -57,7 +48,8 @@ export default function AskForm({ aiEnabled }: { aiEnabled: boolean }) {
         return;
       }
       setAnswer(data as AnswerPayload);
-      trackCategoryOnly(category);
+      // Enum values only. The typed question is never sent to analytics.
+      track('start_ask_flow', { audience: audience || undefined, topic: category });
       requestAnimationFrame(() => answerRef.current?.focus());
     } catch {
       setError('Could not reach the server. Please try again.');

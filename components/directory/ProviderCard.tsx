@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ContactLinks from './ContactLinks';
 import {
   ageGroupLabel,
   canShowReferralStatus,
@@ -116,26 +117,9 @@ export default function ProviderCard({ provider }: { provider: Provider }) {
 
       {/* Contact controls appear only when there is something real behind them,
           and never on an example record. */}
-      {!example && (tel || website) && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tel && (
-            <a
-              href={tel}
-              className="rounded-md bg-navy px-4 py-2 text-sm font-semibold text-white hover:bg-navy-900"
-            >
-              Call {provider.phone}
-            </a>
-          )}
-          {website && (
-            <a
-              href={website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-md border border-navy px-4 py-2 text-sm font-semibold text-navy hover:bg-mist"
-            >
-              Visit website
-            </a>
-          )}
+      {!example && (
+        <div className="mt-4">
+          <ContactLinks slug={provider.slug} phone={provider.phone} tel={tel} website={website} />
         </div>
       )}
 

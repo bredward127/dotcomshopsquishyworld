@@ -30,16 +30,49 @@ export default function PrivacyPage() {
 
           <h2>Measurement</h2>
           {analyticsActive ? (
-            <p>
-              This site loads Google&rsquo;s gtag.js to measure traffic and advertising performance.
-              That script may set cookies and share information such as your IP address, browser,
-              and the pages you view with Google. It runs on every page. You can limit it with
-              browser privacy settings, an ad blocker, or Google&rsquo;s own opt-out tools.
-            </p>
+            <>
+              <p>
+                Measurement is off until you allow it. When you first arrive, a banner asks whether
+                Google Analytics and Google Ads measurement may run. Until you choose Allow, storage
+                and advertising signals are set to denied and no measurement cookies are set.
+                Declining costs you nothing here — every page works the same either way.
+              </p>
+              <p>
+                If you allow it, Google&rsquo;s gtag.js runs and may set cookies and share your IP
+                address, browser, and the pages you view with Google. Your choice is remembered in
+                this browser. To change it, clear this site&rsquo;s data in your browser settings
+                and the banner will ask again.
+              </p>
+
+              <h2>What we record, and what we never do</h2>
+              <p>
+                We record a short, fixed list of actions — pages viewed, which topic area you picked
+                on the question page, which filters you used in the directory, and which listings
+                you contacted. Every event and every field it may carry is written down in the
+                measurement plan kept in this site&rsquo;s source code.
+              </p>
+              <p>
+                What is never sent: the text of any question you type, the city or ZIP you type into
+                the directory filter, your email address or phone number, and anything about health,
+                symptoms, or a diagnosis. The code strips these before sending rather than relying
+                on care at the point of use — a question you type is not transmitted even if
+                something goes wrong elsewhere.
+              </p>
+
+              <h2>Campaign links</h2>
+              <p>
+                If you arrive from an ad or a campaign link, the campaign tags in the address
+                (utm_source, gclid, and similar) are kept for this browser session only, and only if
+                you allowed measurement. They are used solely to attribute an enquiry you choose to
+                send, are discarded when you close the tab, and expire after 30 days regardless.
+                They are not attached to page views.
+              </p>
+            </>
           ) : (
             <p>
               No analytics or advertising scripts are currently loaded. If measurement is added, this
-              page will be updated to say what runs and what it collects.
+              page will be updated to say what runs and what it collects, and it will be off until
+              you allow it.
             </p>
           )}
 

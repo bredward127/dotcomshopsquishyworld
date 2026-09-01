@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ConsentBanner from '@/components/analytics/ConsentBanner';
+import RouteEvents from '@/components/analytics/RouteEvents';
 import { site, absoluteUrl } from '@/lib/site';
 import './globals.css';
 
@@ -79,6 +81,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Footer />
 
+        <ConsentBanner />
+        <RouteEvents />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -86,15 +91,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {site.googleTagId ? (
           <>
+            {/* Consent Mode defaults must execute before gtag.js loads, so this
+                is a plain inline script parsed in document order rather than a
+                deferred next/script. Everything starts denied. */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});`,
+              }}
+            />
             <Script
               id="gtag-src"
               strategy="afterInteractive"
               src={`https://www.googletagmanager.com/gtag/js?id=${site.googleTagId}`}
             />
             <Script id="gtag-init" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+              {`gtag('js', new Date());
 gtag('config', '${site.googleTagId}');`}
             </Script>
           </>

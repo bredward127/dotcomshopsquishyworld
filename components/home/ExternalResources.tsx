@@ -1,4 +1,8 @@
+'use client';
+
 import { ExternalIcon } from '@/components/Icons';
+import { track } from '@/lib/analytics/track';
+import { hostOf } from '@/lib/analytics/events';
 
 /**
  * Outside links. These are independent organizations with no relationship to
@@ -7,6 +11,7 @@ import { ExternalIcon } from '@/components/Icons';
  */
 const resources = [
   {
+    id: 'ot-toolbox-free-resources',
     href: 'https://www.theottoolbox.com/category/free-resources/',
     title: 'The OT Toolbox — Free resources',
     attribution:
@@ -36,6 +41,12 @@ export default function ExternalResources() {
               href={resource.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                track('outbound_resource_click', {
+                  resource_id: resource.id,
+                  destination_host: hostOf(resource.href) ?? undefined,
+                })
+              }
               className="group flex h-full flex-col rounded-card border border-mist-400 p-5
                          transition-colors hover:border-teal hover:bg-mist-200"
             >

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
+import MailtoLink from '@/components/analytics/MailtoLink';
 import Disclaimer from '@/components/Disclaimer';
 import { providerContactEmail, providerContactReady } from '@/lib/site';
 
@@ -82,12 +83,14 @@ export default function ForProvidersPage() {
                     There is no submission form here yet. Email is the working route — the link
                     below opens your mail app with the details we need already laid out.
                   </p>
-                  <a
+                  <MailtoLink
                     href={`mailto:${providerContactEmail}?subject=${INTEREST_SUBJECT}&body=${INTEREST_BODY}`}
+                    event="provider_interest_submit"
+                    method="mailto"
                     className="mt-4 block rounded-md bg-navy px-5 py-3 text-center text-sm font-semibold text-white hover:bg-navy-900"
                   >
                     Email us about a listing
-                  </a>
+                  </MailtoLink>
                   <p className="mt-3 break-all text-xs text-ink-muted">{providerContactEmail}</p>
                 </>
               ) : (

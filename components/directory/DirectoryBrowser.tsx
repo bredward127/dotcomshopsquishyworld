@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   SERVICE_TYPES,
@@ -13,6 +13,7 @@ import {
 } from '@/lib/directory/types';
 import { filterProviders, hasActiveFilters, EMPTY_FILTERS } from '@/lib/directory/filters';
 import ProviderCard from './ProviderCard';
+import { track } from '@/lib/analytics/track';
 
 type Props = {
   providers: Provider[];
@@ -28,6 +29,25 @@ export default function DirectoryBrowser({ providers, examples }: Props) {
 
   const results = useMemo(() => filterProviders(active, filters), [active, filters]);
   const filtersActive = hasActiveFilters(filters);
+
+  // Report which filter dimensions were used, never the typed city or ZIP.
+  const debounce = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!filtersActive) return;
+    if (debounce.current) clearTimeout(debounce.current);
+    debounce.current = setTimeout(() => {
+      track('directory_search', {
+        has_location: filters.location.trim().length > 0,
+        service: filters.service || undefined,
+        age_group: filters.ageGroup || undefined,
+        referral_status: filters.referral || undefined,
+        result_count: results.length,
+      });
+    }, 600);
+    return () => {
+      if (debounce.current) clearTimeout(debounce.current);
+    };
+  }, [filters, filtersActive, results.length]);
 
   // Filter controls are hidden entirely when there is nothing to filter.
   const showControls = hasRealData || showExamples;

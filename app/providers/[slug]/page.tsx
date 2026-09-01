@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageHeader from '@/components/PageHeader';
+import ContactLinks from '@/components/directory/ContactLinks';
 import Disclaimer from '@/components/Disclaimer';
 import { findProvider, allProviderSlugs, EXAMPLE_BADGE } from '@/lib/directory/data';
 import {
@@ -157,25 +158,14 @@ export default function ProviderProfilePage({ params }: Params) {
                   Contact details are not shown on example listings.
                 </p>
               ) : tel || website ? (
-                <div className="mt-3 space-y-2">
-                  {tel && (
-                    <a
-                      href={tel}
-                      className="block rounded-md bg-navy px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-navy-900"
-                    >
-                      Call {provider.phone}
-                    </a>
-                  )}
-                  {website && (
-                    <a
-                      href={website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block rounded-md border border-navy px-4 py-2.5 text-center text-sm font-semibold text-navy hover:bg-mist"
-                    >
-                      Visit website
-                    </a>
-                  )}
+                <div className="mt-3">
+                  <ContactLinks
+                    slug={provider.slug}
+                    phone={provider.phone}
+                    tel={tel}
+                    website={website}
+                    stacked
+                  />
                 </div>
               ) : (
                 <p className="mt-2 text-sm text-ink-muted">
