@@ -87,3 +87,22 @@ programmatically before the commit that added them.
 
 Also added: a visible `/sitemap` page (distinct from the machine-readable
 `/sitemap.xml`), linked from the footer next to About/Privacy/Disclosure.
+
+## Batch 3 — sleep and travel
+
+Two more articles, inspired by search-query themes from an external
+keyword-research tool the user reviewed (sleep and travel came up as
+distinct, non-redundant, non-product topics worth covering) - not tied to
+any new nav section, cross-linked into the existing mesh instead.
+
+| # | Slug | Question | Category |
+|---|---|---|---|
+| 29 | `sensory-friendly-sleep-routines` | How can bedtime be made more sensory-friendly? | `routines` |
+| 30 | `sensory-friendly-travel-tips` | How can travel be made easier for sensory sensitivities? | `overwhelm` |
+
+Both videos were found the same way as every other article: real search
+against the YouTube Data API, candidates reviewed by hand for genuine
+topical fit rather than picking the top result. The sleep video
+(`gRy6BlrBgpQ`, Harkla) and travel video (`RnnxEw0sb3w`, Kaelynn Partlow)
+are both distinct from every other video ID used across the library -
+checked programmatically before this batch's commit.

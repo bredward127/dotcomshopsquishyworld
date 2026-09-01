@@ -300,7 +300,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'SBCUSD',
       viewCountAtSelection: '72,416 (checked 2026-09-01)',
     },
-    relatedSlugs: ['why-fluorescent-lights-feel-overwhelming', 'why-loud-noises-are-distressing', 'classroom-sensory-accommodations'],
+    relatedSlugs: ['why-fluorescent-lights-feel-overwhelming', 'why-loud-noises-are-distressing', 'classroom-sensory-accommodations', 'sensory-friendly-travel-tips'],
     faqs: [
       {
         question: 'Does this need to be a whole room?',
@@ -695,7 +695,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Therapy in a Nutshell',
       viewCountAtSelection: '90,396 (checked 2026-09-01)',
     },
-    relatedSlugs: ['building-body-awareness-as-an-adult', 'workplace-sensory-accommodations', 'what-is-a-sensory-diet'],
+    relatedSlugs: ['building-body-awareness-as-an-adult', 'workplace-sensory-accommodations', 'what-is-a-sensory-diet', 'sensory-friendly-sleep-routines'],
     faqs: [
       {
         question: 'Is this the same as a sensory diet for children?',
@@ -706,6 +706,56 @@ export const libraryArticles: LibraryArticle[] = [
         question: 'Do I need special equipment to start?',
         answer:
           'No. Most of it - movement, a consistent routine, deep pressure from a firm stretch - needs nothing beyond what is already at home.',
+      },
+    ],
+  },
+  {
+    slug: 'sensory-friendly-sleep-routines',
+    title: 'How can bedtime be made more sensory-friendly?',
+    dek: 'Why bedtime is a uniquely hard sensory moment, and the specific adjustments to bedding, light, and sound that tend to help.',
+    category: 'routines',
+    video: {
+      videoId: 'gRy6BlrBgpQ',
+      title: '5 Sensory Activities to Help Your Child Sleep Better Every Night | Calming Activities for Children',
+      channel: 'Harkla - Parenting & Child Development Tips',
+      viewCountAtSelection: '16,014 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['what-is-a-sensory-diet', 'why-pushing-and-squeezing-feels-calming', 'why-fluorescent-lights-feel-overwhelming', 'how-to-set-up-a-low-stimulation-space', 'sensory-friendly-daily-routines-for-adults'],
+    faqs: [
+      {
+        question: 'Is it normal for sensory sensitivities to feel worse at bedtime than during the day?',
+        answer:
+          'Yes, this is a common pattern. Lying still in a quiet, dark room removes the distractions that make ordinary sensations easier to ignore during the day, so the same texture or sound can register as more noticeable at night.',
+      },
+      {
+        question: 'Should every change be tried at once?',
+        answer:
+          'One at a time works better. Trying bedding, lighting, and sound changes all together makes it hard to tell which one is actually helping, and what calms one person can bother another.',
+      },
+    ],
+  },
+  {
+    slug: 'sensory-friendly-travel-tips',
+    title: 'How can travel be made easier for sensory sensitivities?',
+    dek: 'Why travel is sensory-intensive even when it goes well, and practical ways to plan for it before, during, and after a trip.',
+    category: 'overwhelm',
+    video: {
+      videoId: 'RnnxEw0sb3w',
+      title: 'How to fly when you have autism',
+      channel: 'Kaelynn Partlow',
+      viewCountAtSelection: '187,038 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['how-to-set-up-a-low-stimulation-space', 'tools-for-sound-sensitivity', 'why-loud-noises-are-distressing', 'what-is-a-sensory-diet', 'sensory-friendly-daily-routines-for-adults'],
+    faqs: [
+      {
+        question: 'Are sensory accommodations actually available at airports?',
+        answer:
+          'Many larger airports now offer sensory rooms, quiet areas, or advance-notice programs for security screening, though availability varies by airport - it is worth checking a specific airport\'s website before the trip rather than assuming.',
+      },
+      {
+        question: 'Is it worth planning recovery time after a trip?',
+        answer:
+          'Often yes. Travel adds up sensory load even when nothing goes wrong, and a day with no obligations right after returning tends to help more than moving straight into a full schedule.',
       },
     ],
   },

@@ -27,6 +27,8 @@ import QuestionsAboutApproachAndExperience from './content/questions-about-appro
 import WorkplaceSensoryAccommodations from './content/workplace-sensory-accommodations';
 import AdultSensoryAssessmentWhatToExpect from './content/adult-sensory-assessment-what-to-expect';
 import SensoryFriendlyDailyRoutinesForAdults from './content/sensory-friendly-daily-routines-for-adults';
+import SensoryFriendlySleepRoutines from './content/sensory-friendly-sleep-routines';
+import SensoryFriendlyTravelTips from './content/sensory-friendly-travel-tips';
 
 /**
  * Slug -> article body component.
@@ -65,4 +67,6 @@ export const libraryBodies: Record<string, ComponentType> = {
   'workplace-sensory-accommodations': WorkplaceSensoryAccommodations,
   'adult-sensory-assessment-what-to-expect': AdultSensoryAssessmentWhatToExpect,
   'sensory-friendly-daily-routines-for-adults': SensoryFriendlyDailyRoutinesForAdults,
+  'sensory-friendly-sleep-routines': SensoryFriendlySleepRoutines,
+  'sensory-friendly-travel-tips': SensoryFriendlyTravelTips,
 };
