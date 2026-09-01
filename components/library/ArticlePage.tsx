@@ -30,6 +30,10 @@ export default function ArticlePage({ article }: { article: LibraryArticle }) {
           <span>{article.title}</span>
         </nav>
 
+        <div className="mb-10 max-w-prose">
+          <VideoSlot video={article.video} />
+        </div>
+
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div>
             <div className="prose-page max-w-prose">
@@ -60,13 +64,6 @@ export default function ArticlePage({ article }: { article: LibraryArticle }) {
           </div>
 
           <aside className="space-y-6">
-            <div>
-              <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-teal">
-                Watch
-              </h2>
-              <VideoSlot video={article.video} />
-            </div>
-
             {related.length > 0 && (
               <div className="rounded-card border border-mist-400 p-5">
                 <h2 className="font-semibold text-navy">Related in the library</h2>
