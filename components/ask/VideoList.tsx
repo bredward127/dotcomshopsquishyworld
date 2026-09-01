@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ExternalIcon } from '@/components/Icons';
 import type { CategoryId } from '@/lib/ask/taxonomy';
 import { track } from '@/lib/analytics/track';
 import type { VideoResult } from '@/lib/ask/videoTypes';
@@ -14,14 +13,13 @@ type State =
 
 /**
  * Click tracking reuses the existing outbound_resource_click event rather
- * than introducing a new one: a YouTube click is an outbound resource click,
- * and resource_id here is the fixed category, not the video ID - a raw
- * YouTube video ID would not pass the analytics sanitizer's slug pattern
- * anyway (it can contain letters, digits, hyphens, and underscores in mixed
- * case), and identifying which specific video someone watched is not
- * something this event is meant to capture.
+ * than introducing a new one. Selecting a video no longer navigates away -
+ * it plays inline - but it is still the same underlying action (choosing to
+ * engage with a specific piece of YouTube content), so the same event and
+ * the same care around what it may carry still applies: resource_id here is
+ * the fixed category, never a raw video ID, and no free text is involved.
  */
-function trackVideoClick(category: CategoryId) {
+function trackVideoSelect(category: CategoryId) {
   track('outbound_resource_click', {
     resource_id: `youtube-${category}`,
     destination_host: 'www.youtube.com',
@@ -30,8 +28,11 @@ function trackVideoClick(category: CategoryId) {
 
 export default function VideoList({ category }: { category: CategoryId | null }) {
   const [state, setState] = useState<State>({ kind: 'idle' });
+  const [activeVideo, setActiveVideo] = useState<VideoResult | null>(null);
 
   useEffect(() => {
+    setActiveVideo(null);
+
     if (!category) {
       setState({ kind: 'idle' });
       return;
@@ -63,6 +64,11 @@ export default function VideoList({ category }: { category: CategoryId | null })
 
   if (state.kind === 'idle') return null;
 
+  function selectVideo(video: VideoResult) {
+    setActiveVideo(video);
+    if (category) trackVideoSelect(category);
+  }
+
   return (
     <section aria-labelledby="videos-heading">
       <h3 id="videos-heading" className="text-lg font-semibold text-navy">
@@ -93,46 +99,69 @@ export default function VideoList({ category }: { category: CategoryId | null })
           <p className="mt-2 text-sm leading-relaxed text-ink-muted">
             These come from YouTube search and are published by people unconnected to this site.
             They are not medical advice, are not endorsements, and have not been reviewed by a
-            clinician.
+            clinician. Pick one below to watch it here.
           </p>
-          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-            {state.videos.map((video) => (
-              <li key={video.videoId}>
-                <a
-                  href={video.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => category && trackVideoClick(category)}
-                  className="group flex h-full gap-3 rounded-card border border-mist-400 p-3 transition-colors hover:border-teal hover:bg-mist-200"
-                >
-                  {/* Remote YouTube thumbnail: plain img avoids configuring a
-                      remote image host for a single third-party domain. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={video.thumbnail}
-                    alt=""
-                    width={120}
-                    height={90}
-                    loading="lazy"
-                    className="h-[68px] w-[90px] shrink-0 rounded object-cover"
-                  />
-                  <span className="min-w-0">
-                    <span className="flex items-start gap-1.5">
-                      <span className="line-clamp-2 text-sm font-medium text-navy group-hover:underline">
+
+          {activeVideo && (
+            <div className="mt-4">
+              <div className="aspect-video overflow-hidden rounded-card border border-mist-400">
+                <iframe
+                  className="h-full w-full"
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideo.videoId}`}
+                  title={activeVideo.title}
+                  loading="lazy"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="mt-2 text-sm text-ink-muted">
+                <span className="font-medium text-navy">{activeVideo.title}</span> &middot;{' '}
+                {activeVideo.channel}
+              </p>
+            </div>
+          )}
+
+          <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {state.videos.map((video) => {
+              const isActive = activeVideo?.videoId === video.videoId;
+              return (
+                <li key={video.videoId}>
+                  <button
+                    type="button"
+                    onClick={() => selectVideo(video)}
+                    aria-pressed={isActive}
+                    className={`flex h-full w-full gap-3 rounded-card border p-3 text-left transition-colors ${
+                      isActive
+                        ? 'border-teal bg-mist-200'
+                        : 'border-mist-400 hover:border-teal hover:bg-mist-200'
+                    }`}
+                  >
+                    {/* Remote YouTube thumbnail: plain img avoids configuring a
+                        remote image host for a single third-party domain. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={video.thumbnail}
+                      alt=""
+                      width={120}
+                      height={90}
+                      loading="lazy"
+                      className="h-[68px] w-[90px] shrink-0 rounded object-cover"
+                    />
+                    <span className="min-w-0">
+                      <span className="line-clamp-2 text-sm font-medium text-navy">
                         {video.title}
                       </span>
-                      <span className="mt-0.5 shrink-0 text-teal">
-                        <ExternalIcon className="h-3.5 w-3.5" />
+                      <span className="mt-1 block truncate text-xs text-ink-muted">
+                        {video.channel}
+                      </span>
+                      <span className="mt-1 block text-xs text-teal">
+                        {isActive ? 'Now playing' : 'Play here'}
                       </span>
                     </span>
-                    <span className="mt-1 block truncate text-xs text-ink-muted">
-                      {video.channel}
-                    </span>
-                    <span className="mt-1 block text-xs text-teal">Opens on YouTube</span>
-                  </span>
-                </a>
-              </li>
-            ))}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
 
           {state.query && (
@@ -140,11 +169,10 @@ export default function VideoList({ category }: { category: CategoryId | null })
               href={`https://www.youtube.com/results?search_query=${encodeURIComponent(state.query)}`}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => category && trackVideoClick(category)}
-              className="mt-3 inline-flex items-center gap-1.5 text-sm text-teal underline underline-offset-4 hover:text-navy"
+              onClick={() => category && trackVideoSelect(category)}
+              className="mt-3 inline-block text-sm text-teal underline underline-offset-4 hover:text-navy"
             >
-              See more on YouTube
-              <ExternalIcon className="h-3.5 w-3.5" />
+              See more on YouTube (opens in a new tab)
             </a>
           )}
         </>

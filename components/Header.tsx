@@ -17,8 +17,16 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-mist-400 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-4 px-4 sm:px-6">
+    <header className="sticky top-0 z-30 border-b border-mist-400">
+      {/*
+        backdrop-blur (backdrop-filter) lives on this inner row, not on
+        <header> itself. filter/backdrop-filter/transform on an ancestor
+        creates a new containing block for position:fixed descendants - with
+        it on <header>, MobileDrawer's `fixed inset-0` was anchored to the
+        header's own 64px box instead of the viewport, collapsing the drawer
+        to a sliver with its content painting outside it with no background.
+      */}
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-4 bg-white/95 px-4 backdrop-blur sm:px-6">
         <Link href="/" className="flex items-center gap-2.5 rounded-md">
           <span
             aria-hidden="true"
