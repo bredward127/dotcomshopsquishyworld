@@ -14,6 +14,16 @@ export const site = {
   googleTagId: process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ?? 'AW-10803481355',
 } as const;
 
+/**
+ * Business address for provider enquiries.
+ *
+ * This is used for mailto links only. It must receive mail before it ships:
+ * a mailto pointing at an address nobody reads loses enquiries silently.
+ * Set providerContactReady to false to remove every mailto from the site.
+ */
+export const providerContactEmail = 'ed@shopsquishyworld.com';
+export const providerContactReady = true;
+
 export function absoluteUrl(path = '/'): string {
   return new URL(path, site.url).toString();
 }
