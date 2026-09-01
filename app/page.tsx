@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import PathCards from '@/components/home/PathCards';
-import FeaturedGuides from '@/components/home/FeaturedGuides';
 import HowItWorks from '@/components/home/HowItWorks';
 import ExternalResources from '@/components/home/ExternalResources';
 import LocalFocus from '@/components/home/LocalFocus';
@@ -40,7 +39,6 @@ export default function HomePage() {
       </section>
 
       <PathCards />
-      <FeaturedGuides />
       <HowItWorks />
       <ExternalResources />
       <LocalFocus />

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ConsentBanner from '@/components/analytics/ConsentBanner';
@@ -36,6 +37,12 @@ export const viewport = {
   initialScale: 1,
 };
 
+/**
+ * Organization and WebSite schema.
+ * Only fields that can be stated truthfully today are included: no logo,
+ * address, phone number, rating, or social profiles are asserted, because
+ * none of those have been established yet.
+ */
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -65,17 +72,52 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
+
         <Header />
+
         <main id="main" className="flex-1">
           {children}
         </main>
+
         <Footer />
+
         <ConsentBanner />
         <RouteEvents />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+
+        {site.googleTagId ? (
+          <>
+            {/* Consent Mode defaults must execute before gtag.js loads, so this
+                is a plain inline script parsed in document order rather than a
+                deferred next/script. Everything starts denied. */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});`,
+              }}
+            />
+            <Script
+              id="gtag-src"
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${site.googleTagId}`}
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+              {`gtag('js', new Date());
+gtag('config', '${site.googleTagId}');`}
+            </Script>
+          </>
+        ) : null}
       </body>
     </html>
   );

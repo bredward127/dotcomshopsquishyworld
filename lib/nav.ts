@@ -34,11 +34,6 @@ export const navGroups: NavGroup[] = [
         href: '/families/school-support',
         description: 'General information about support in school settings.',
       },
-      {
-        label: 'What is a sensory diet?',
-        href: '/topics/what-is-a-sensory-diet',
-        description: 'Plain-language explanation of OT regulation schedules.',
-      },
     ],
   },
   {
@@ -55,11 +50,6 @@ export const navGroups: NavGroup[] = [
         href: '/find-help/what-to-ask',
         description: 'Questions to bring to a first conversation.',
       },
-      {
-        label: 'Pediatric OT in Metro Detroit',
-        href: '/topics/find-pediatric-occupational-therapy-metro-detroit',
-        description: 'Local guide to referrals, waitlists, and clinics.',
-      },
     ],
   },
   {
@@ -75,11 +65,6 @@ export const navGroups: NavGroup[] = [
         label: 'Glossary',
         href: '/resources/glossary',
         description: 'Terms you may encounter, explained simply.',
-      },
-      {
-        label: 'Editorial policy',
-        href: '/editorial-policy',
-        description: 'Verification standards, disclosures, and corrections.',
       },
     ],
   },
@@ -103,36 +88,10 @@ export const navGroups: NavGroup[] = [
 export const standaloneLinks: NavLink[] = [
   { label: 'Ask a question', href: '/ask', description: 'Where to find answers on this site today.' },
   { label: 'For an adult', href: '/for-adults', description: 'Information for adults considering their own sensory needs.' },
-  {
-    label: 'Sensory support for adults in Michigan',
-    href: '/topics/sensory-friendly-support-adults-southeast-michigan',
-    description: 'Workplace and daily living guidance for adults.',
-  },
-  {
-    label: 'Questions to ask an OT',
-    href: '/topics/questions-to-ask-occupational-therapist',
-    description: '10-question screening checklist for choosing an occupational therapist.',
-  },
-  {
-    label: 'Pediatric OT in Royal Oak',
-    href: '/services/pediatric-occupational-therapy-royal-oak',
-    description: 'Local guide and directory for South Oakland County.',
-  },
-  {
-    label: 'Pediatric OT in Troy',
-    href: '/services/pediatric-occupational-therapy-troy',
-    description: 'Local guide and directory for North Oakland County.',
-  },
-  {
-    label: 'Pediatric OT in Dearborn',
-    href: '/services/pediatric-occupational-therapy-dearborn',
-    description: 'Local guide and directory for Western Wayne County.',
-  },
 ];
 
 export const footerLinks: NavLink[] = [
   { label: 'About', href: '/about', description: 'Who runs this site and why.' },
-  { label: 'Editorial Policy', href: '/editorial-policy', description: 'Verification standards and sponsorship policy.' },
   { label: 'Privacy', href: '/privacy', description: 'How this site handles data.' },
   { label: 'Disclosure', href: '/disclosure', description: 'Funding and affiliate disclosure.' },
 ];
