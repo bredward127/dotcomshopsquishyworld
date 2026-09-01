@@ -19,6 +19,14 @@ import SafeMovementActivitiesDuringTheDay from './content/safe-movement-activiti
 import WhyPushingAndSqueezingFeelsCalming from './content/why-pushing-and-squeezing-feels-calming';
 import WhyKidsMissHungerThirstBathroomSignals from './content/why-kids-miss-hunger-thirst-bathroom-signals';
 import BuildingBodyAwarenessAsAnAdult from './content/building-body-awareness-as-an-adult';
+import HowSchoolBasedOtWorks from './content/how-school-based-ot-works';
+import ClassroomSensoryAccommodations from './content/classroom-sensory-accommodations';
+import TalkingToATeacherAboutSensoryNeeds from './content/talking-to-a-teacher-about-sensory-needs';
+import QuestionsAboutCostInsuranceAndScheduling from './content/questions-about-cost-insurance-and-scheduling';
+import QuestionsAboutApproachAndExperience from './content/questions-about-approach-and-experience';
+import WorkplaceSensoryAccommodations from './content/workplace-sensory-accommodations';
+import AdultSensoryAssessmentWhatToExpect from './content/adult-sensory-assessment-what-to-expect';
+import SensoryFriendlyDailyRoutinesForAdults from './content/sensory-friendly-daily-routines-for-adults';
 
 /**
  * Slug -> article body component.
@@ -49,4 +57,12 @@ export const libraryBodies: Record<string, ComponentType> = {
   'why-pushing-and-squeezing-feels-calming': WhyPushingAndSqueezingFeelsCalming,
   'why-kids-miss-hunger-thirst-bathroom-signals': WhyKidsMissHungerThirstBathroomSignals,
   'building-body-awareness-as-an-adult': BuildingBodyAwarenessAsAnAdult,
+  'how-school-based-ot-works': HowSchoolBasedOtWorks,
+  'classroom-sensory-accommodations': ClassroomSensoryAccommodations,
+  'talking-to-a-teacher-about-sensory-needs': TalkingToATeacherAboutSensoryNeeds,
+  'questions-about-cost-insurance-and-scheduling': QuestionsAboutCostInsuranceAndScheduling,
+  'questions-about-approach-and-experience': QuestionsAboutApproachAndExperience,
+  'workplace-sensory-accommodations': WorkplaceSensoryAccommodations,
+  'adult-sensory-assessment-what-to-expect': AdultSensoryAssessmentWhatToExpect,
+  'sensory-friendly-daily-routines-for-adults': SensoryFriendlyDailyRoutinesForAdults,
 };

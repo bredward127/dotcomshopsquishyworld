@@ -8,8 +8,8 @@ import { CATEGORY_IDS } from '../ask/taxonomy.ts';
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 describe('library article integrity', () => {
-  test('ships all 20 articles from the master plan', () => {
-    assert.equal(libraryArticles.length, 20);
+  test('ships all 28 articles from the master plan', () => {
+    assert.equal(libraryArticles.length, 28);
   });
 
   test('every slug is unique and URL-safe', () => {
@@ -29,14 +29,15 @@ describe('library article integrity', () => {
     }
   });
 
-  test('every article has a verified video with a well-formed, real-looking ID', () => {
+  test('every present video is real-shaped - well-formed ID, non-empty fields, a dated view count', () => {
     // A real YouTube video ID is exactly 11 URL-safe characters. This can't
     // prove a video is real on its own, but it catches an obviously-invented
     // placeholder ("VIDEO_ID_HERE", "xxxxxxxxxxx", empty string) immediately.
+    // A null video is allowed - see the next test - but never a fake one.
     const YOUTUBE_ID_RE = /^[A-Za-z0-9_-]{11}$/;
     for (const article of libraryArticles) {
-      assert.ok(article.video, `${article.slug} has no video`);
-      const v = article.video!;
+      if (article.video === null) continue;
+      const v = article.video;
       assert.match(v.videoId, YOUTUBE_ID_RE, `${article.slug} video ID "${v.videoId}" is not a well-formed YouTube ID`);
       assert.ok(v.title.length > 0, `${article.slug} video has no title`);
       assert.ok(v.channel.length > 0, `${article.slug} video has no channel`);
@@ -49,8 +50,17 @@ describe('library article integrity', () => {
     }
   });
 
+  test('at most a small handful of articles are missing a video - a null must be a deliberate exception, not the default', () => {
+    const missing = libraryArticles.filter((a) => a.video === null);
+    assert.ok(
+      missing.length <= 2,
+      `${missing.length} articles have no video (${missing.map((a) => a.slug).join(', ')}) - ` +
+        'each one should be a documented case where no genuinely relevant video was found, not an oversight',
+    );
+  });
+
   test('no two articles share the same video', () => {
-    const ids = libraryArticles.map((a) => a.video?.videoId);
+    const ids = libraryArticles.map((a) => a.video?.videoId).filter((id): id is string => Boolean(id));
     assert.equal(new Set(ids).size, ids.length, 'a video ID is reused across two articles');
   });
 

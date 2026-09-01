@@ -200,7 +200,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Scripps Research',
       viewCountAtSelection: '36,147 (checked 2026-09-01)',
     },
-    relatedSlugs: ['what-is-a-sensory-diet', 'why-kids-miss-hunger-thirst-bathroom-signals', 'building-body-awareness-as-an-adult'],
+    relatedSlugs: ['what-is-a-sensory-diet', 'why-kids-miss-hunger-thirst-bathroom-signals', 'building-body-awareness-as-an-adult', 'adult-sensory-assessment-what-to-expect'],
     faqs: [
       {
         question: 'How is interoception related to meltdowns?',
@@ -250,7 +250,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Edutopia',
       viewCountAtSelection: '1,868,321 (checked 2026-09-01)',
     },
-    relatedSlugs: ['why-loud-noises-are-distressing', 'tools-for-sound-sensitivity'],
+    relatedSlugs: ['why-loud-noises-are-distressing', 'tools-for-sound-sensitivity', 'classroom-sensory-accommodations'],
     faqs: [
       {
         question: 'Do these changes only help sensitive students?',
@@ -300,7 +300,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'SBCUSD',
       viewCountAtSelection: '72,416 (checked 2026-09-01)',
     },
-    relatedSlugs: ['why-fluorescent-lights-feel-overwhelming', 'why-loud-noises-are-distressing'],
+    relatedSlugs: ['why-fluorescent-lights-feel-overwhelming', 'why-loud-noises-are-distressing', 'classroom-sensory-accommodations'],
     faqs: [
       {
         question: 'Does this need to be a whole room?',
@@ -500,7 +500,7 @@ export const libraryArticles: LibraryArticle[] = [
       channel: 'Autism From The Inside',
       viewCountAtSelection: '46,685 (checked 2026-09-01)',
     },
-    relatedSlugs: ['what-is-interoception', 'why-kids-miss-hunger-thirst-bathroom-signals'],
+    relatedSlugs: ['what-is-interoception', 'why-kids-miss-hunger-thirst-bathroom-signals', 'sensory-friendly-daily-routines-for-adults', 'adult-sensory-assessment-what-to-expect'],
     faqs: [
       {
         question: 'Is it too late to build this awareness as an adult?',
@@ -511,6 +511,201 @@ export const libraryArticles: LibraryArticle[] = [
         question: 'What is a simple way to start?',
         answer:
           'A few scheduled check-ins through the day asking what the body feels like right now, rather than waiting to notice something is already wrong.',
+      },
+    ],
+  },
+  {
+    slug: 'how-school-based-ot-works',
+    title: 'How does school-based occupational therapy work?',
+    dek: 'IEPs, 504 Plans, and informal accommodations explained, and how a student gets evaluated.',
+    category: 'school',
+    video: {
+      videoId: 'sJ2KlmG5OV0',
+      title: 'IDEA Basics: (504 Plan) How is an IEP Different from a 504 Plan?',
+      channel: 'Your Special Education Rights',
+      viewCountAtSelection: '174,685 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['classroom-sensory-accommodations', 'talking-to-a-teacher-about-sensory-needs'],
+    faqs: [
+      {
+        question: 'Does my child need a diagnosis to get school-based OT?',
+        answer:
+          'Not necessarily. Eligibility is based on how a need affects access to education, which is a different standard than a clinical diagnosis.',
+      },
+      {
+        question: 'Can a child have both private and school-based OT?',
+        answer:
+          'Yes. School-based OT is limited to education-related goals, so many families also use a private therapist for broader goals.',
+      },
+    ],
+  },
+  {
+    slug: 'classroom-sensory-accommodations',
+    title: 'What sensory accommodations are common in classrooms?',
+    dek: 'A practical survey of seating, sound, light, and calm-down adjustments schools actually use.',
+    category: 'school',
+    video: {
+      videoId: 'WcMOIzLuXv8',
+      title: '10 School Accommodations for Sensory Processing Differences',
+      channel: 'OT for Schools',
+      viewCountAtSelection: '275 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['how-school-based-ot-works', 'sound-friendly-classroom-strategies', 'how-to-set-up-a-low-stimulation-space'],
+    faqs: [
+      {
+        question: 'Do these accommodations require a formal IEP or 504 Plan?',
+        answer:
+          'Some do, if they need to be legally guaranteed, but many - like seating changes or headphones - can be agreed informally with a teacher.',
+      },
+      {
+        question: 'Will one accommodation fix everything?',
+        answer:
+          'Rarely. Most students benefit from a small combination suited to their specific triggers, not a single universal fix.',
+      },
+    ],
+  },
+  {
+    slug: 'talking-to-a-teacher-about-sensory-needs',
+    title: 'How to talk to a teacher about your child\'s sensory needs',
+    dek: 'How to prepare for the conversation, what to say, and why a short follow-up email matters.',
+    category: 'school',
+    video: {
+      videoId: '0PHisBzsn6k',
+      title: 'Autism Spectrum: Tips For Teachers',
+      channel: 'Nip in the Bud',
+      viewCountAtSelection: '121,296 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['classroom-sensory-accommodations', 'how-school-based-ot-works'],
+    faqs: [
+      {
+        question: 'What if the teacher doesn\'t know much about sensory processing?',
+        answer:
+          'Framing requests around what helps the student participate, rather than clinical terms, usually works better than expecting specialist knowledge.',
+      },
+      {
+        question: 'What if informal conversations aren\'t leading to real changes?',
+        answer:
+          'That is a reasonable point to ask about a formal evaluation, which creates accommodations the school is legally required to follow.',
+      },
+    ],
+  },
+  {
+    slug: 'questions-about-cost-insurance-and-scheduling',
+    title: 'What to ask about cost, insurance, and scheduling before your first appointment',
+    dek: 'Practical questions worth getting answered before you commit to a provider, not during the first visit.',
+    category: 'routines',
+    video: {
+      videoId: 'B_mnGwiqcBw',
+      title: 'What to expect at your child’s first occupational therapy appointment',
+      channel: 'MidCheshireHospitals',
+      viewCountAtSelection: '250 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['questions-about-approach-and-experience', 'how-school-based-ot-works'],
+    faqs: [
+      {
+        question: 'Should I ask about cost before or after the first session?',
+        answer:
+          'Before. Practices vary widely on cost, wait times, and telehealth availability, so it is worth confirming these fit your family before scheduling.',
+      },
+      {
+        question: 'What if a practice won\'t answer these questions clearly?',
+        answer:
+          'That is useful information on its own - a practice that communicates clearly about logistics upfront is usually a good sign for communication generally.',
+      },
+    ],
+  },
+  {
+    slug: 'questions-about-approach-and-experience',
+    title: 'What to ask about a therapist\'s approach and experience',
+    dek: 'Questions about specialty, session style, and progress tracking to gauge fit before committing.',
+    category: 'routines',
+    video: null,
+    relatedSlugs: ['questions-about-cost-insurance-and-scheduling'],
+    faqs: [
+      {
+        question: 'Is a brief phone consultation worth doing first?',
+        answer:
+          'Many practices offer one, and it is a low-cost way to gauge communication style before a full paid evaluation.',
+      },
+      {
+        question: 'Is there a single best answer to these questions?',
+        answer:
+          'No. What matters is whether the answers match what you are actually looking for, not any single ideal response.',
+      },
+    ],
+  },
+  {
+    slug: 'workplace-sensory-accommodations',
+    title: 'What sensory accommodations are available in the workplace?',
+    dek: 'Practical adjustments to ask about, and the difference between informal requests and a formal ADA process.',
+    category: 'overwhelm',
+    video: {
+      videoId: 'mOoVTtz7ryQ',
+      title: '14 Workplace Accommodations for Autistic People',
+      channel: 'Mom on the Spectrum',
+      viewCountAtSelection: '24,265 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['adult-sensory-assessment-what-to-expect', 'sensory-friendly-daily-routines-for-adults'],
+    faqs: [
+      {
+        question: 'Do I need a diagnosis to request workplace accommodations?',
+        answer:
+          'For a formal ADA request, documentation from a healthcare provider is often needed, but many informal adjustments do not require any paperwork.',
+      },
+      {
+        question: 'What is the easiest accommodation to start with?',
+        answer:
+          'Something informal a manager can approve directly, such as headphones or desk placement, before escalating to a formal HR process.',
+      },
+    ],
+  },
+  {
+    slug: 'adult-sensory-assessment-what-to-expect',
+    title: 'Getting a sensory assessment as an adult: what to expect',
+    dek: 'Where to start, what an assessment typically involves, and practical things worth knowing beforehand.',
+    category: 'overwhelm',
+    video: {
+      videoId: '1be8NSAt-XA',
+      title: 'What to expect during an autism assessment',
+      channel: 'Berkshire Healthcare',
+      viewCountAtSelection: '320,220 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['workplace-sensory-accommodations', 'what-is-interoception'],
+    faqs: [
+      {
+        question: 'Who actually performs an adult sensory assessment?',
+        answer:
+          'It varies - a psychologist, occupational therapist, or specialized adult assessment clinic, depending on what exactly is being evaluated.',
+      },
+      {
+        question: 'Does an assessment always lead to a diagnosis?',
+        answer:
+          'Not necessarily, and an assessment can support formal accommodations even without a broader diagnosis attached.',
+      },
+    ],
+  },
+  {
+    slug: 'sensory-friendly-daily-routines-for-adults',
+    title: 'Sensory-friendly daily routines for adults',
+    dek: 'Building the same regulating-input idea behind a sensory diet into an adult schedule nobody else manages.',
+    category: 'overwhelm',
+    video: {
+      videoId: 'F0QX2uHoq6A',
+      title: 'Exploring a Sensory Diet for Emotional Regulation - Sensory Processing Disorders',
+      channel: 'Therapy in a Nutshell',
+      viewCountAtSelection: '90,396 (checked 2026-09-01)',
+    },
+    relatedSlugs: ['building-body-awareness-as-an-adult', 'workplace-sensory-accommodations', 'what-is-a-sensory-diet'],
+    faqs: [
+      {
+        question: 'Is this the same as a sensory diet for children?',
+        answer:
+          'Same underlying idea - regular, planned sensory input through the day - built around an adult\'s own schedule instead of one someone else manages.',
+      },
+      {
+        question: 'Do I need special equipment to start?',
+        answer:
+          'No. Most of it - movement, a consistent routine, deep pressure from a firm stretch - needs nothing beyond what is already at home.',
       },
     ],
   },

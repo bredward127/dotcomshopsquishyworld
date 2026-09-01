@@ -113,6 +113,7 @@ export const standaloneLinks: NavLink[] = [
 
 export const footerLinks: NavLink[] = [
   { label: 'About', href: '/about', description: 'Who runs this site and why.' },
+  { label: 'Site Map', href: '/sitemap', description: 'Every page on this site, in one place.' },
   { label: 'Privacy', href: '/privacy', description: 'How this site handles data.' },
   { label: 'Disclosure', href: '/disclosure', description: 'Funding and affiliate disclosure.' },
 ];

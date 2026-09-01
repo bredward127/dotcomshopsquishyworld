@@ -53,3 +53,37 @@ an endorsement.
 Route structure, internal link mesh, SEO metadata, `Article` JSON-LD,
 sitemap entries (21: the index plus all 20 articles), nav, and now video
 embeds - the Sensory Library section is complete end to end.
+
+## Batch 2 — school, provider-questions, and adult sections
+
+Added to close out three nav sections that were still "Coming soon"
+placeholders: `/families/school-support`, `/find-help/what-to-ask`, and
+`/for-adults`. Each is now a real landing page linking to 2-3 new Sensory
+Library articles, keeping the recommendation in place rather than removing
+it, per the standing instruction not to walk back a recommended section -
+just build the articles behind it.
+
+| # | Slug | Question | Landing page |
+|---|---|---|---|
+| 21 | `how-school-based-ot-works` | How does school-based occupational therapy work? | `/families/school-support` |
+| 22 | `classroom-sensory-accommodations` | What sensory accommodations are common in classrooms? | `/families/school-support` |
+| 23 | `talking-to-a-teacher-about-sensory-needs` | How to talk to a teacher about your child's sensory needs | `/families/school-support` |
+| 24 | `questions-about-cost-insurance-and-scheduling` | What to ask about cost, insurance, and scheduling | `/find-help/what-to-ask` |
+| 25 | `questions-about-approach-and-experience` | What to ask about a therapist's approach and experience | `/find-help/what-to-ask` |
+| 26 | `workplace-sensory-accommodations` | What sensory accommodations are available in the workplace? | `/for-adults` |
+| 27 | `adult-sensory-assessment-what-to-expect` | Getting a sensory assessment as an adult: what to expect | `/for-adults` |
+| 28 | `sensory-friendly-daily-routines-for-adults` | Sensory-friendly daily routines for adults | `/for-adults` |
+
+**One article has no video.** `questions-about-approach-and-experience`
+searched genuinely (see the query in the search script this batch was
+built with) but every real result was either an OT-school career/interview
+video aimed at students choosing a college major, or unrelated - nothing
+addressed a family or patient choosing a provider. Rather than attach an
+irrelevant video to hit a quota, `video` stays `null` and the page shows
+the same honest placeholder as everything else on this site does when a
+real match doesn't exist. All 7 other videos in this batch are real,
+verified, and distinct from every video used in batch 1 - checked
+programmatically before the commit that added them.
+
+Also added: a visible `/sitemap` page (distinct from the machine-readable
+`/sitemap.xml`), linked from the footer next to About/Privacy/Disclosure.
