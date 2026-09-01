@@ -1,10 +1,15 @@
 import type { MetadataRoute } from 'next';
-import { navGroups, footerLinks } from '@/lib/nav';
+import { navGroups, standaloneLinks, footerLinks } from '@/lib/nav';
 import { absoluteUrl } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = Array.from(
-    new Set(['/', ...navGroups.flatMap((g) => g.links.map((l) => l.href)), ...footerLinks.map((l) => l.href)]),
+    new Set([
+      '/',
+      ...navGroups.flatMap((g) => g.links.map((l) => l.href)),
+      ...standaloneLinks.map((l) => l.href),
+      ...footerLinks.map((l) => l.href),
+    ]),
   );
 
   const lastModified = new Date();

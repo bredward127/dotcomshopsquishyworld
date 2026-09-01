@@ -38,16 +38,16 @@ export const navGroups: NavGroup[] = [
   },
   {
     label: 'Find Local Help',
-    href: '/directory',
+    href: '/find-help',
     links: [
       {
-        label: 'Local service directory',
-        href: '/directory',
+        label: 'Find local support',
+        href: '/find-help',
         description: 'Regional listings for sensory-related services.',
       },
       {
         label: 'What to ask a provider',
-        href: '/directory/what-to-ask',
+        href: '/find-help/what-to-ask',
         description: 'Questions to bring to a first conversation.',
       },
     ],
@@ -70,15 +70,24 @@ export const navGroups: NavGroup[] = [
   },
   {
     label: 'For Providers',
-    href: '/providers',
+    href: '/for-providers',
     links: [
       {
         label: 'About listings',
-        href: '/providers',
+        href: '/for-providers',
         description: 'Information for local practices and organizations.',
       },
     ],
   },
+];
+
+/**
+ * Routes reached from the home page and in-page links rather than the main
+ * nav groups. Listed here so the sitemap stays complete.
+ */
+export const standaloneLinks: NavLink[] = [
+  { label: 'Ask a question', href: '/ask', description: 'Where to find answers on this site today.' },
+  { label: 'For an adult', href: '/for-adults', description: 'Information for adults considering their own sensory needs.' },
 ];
 
 export const footerLinks: NavLink[] = [
@@ -90,5 +99,6 @@ export const footerLinks: NavLink[] = [
 /** Flattened list used by the in-drawer navigation filter. */
 export const allNavLinks: NavLink[] = [
   ...navGroups.flatMap((group) => group.links),
+  ...standaloneLinks,
   ...footerLinks,
 ];

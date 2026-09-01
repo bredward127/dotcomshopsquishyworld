@@ -6,7 +6,7 @@ import Disclaimer from '@/components/Disclaimer';
 export const metadata: Metadata = {
   title: 'Local service directory',
   description: 'Regional listings for sensory-related services in Metro Detroit and Southeast Michigan.',
-  alternates: { canonical: '/directory' },
+  alternates: { canonical: '/find-help' },
 };
 
 export default function Page() {

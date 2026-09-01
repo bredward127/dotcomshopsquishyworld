@@ -6,7 +6,7 @@ import Disclaimer from '@/components/Disclaimer';
 export const metadata: Metadata = {
   title: 'What to ask a provider',
   description: 'Questions worth bringing to a first conversation with a local provider.',
-  alternates: { canonical: '/directory/what-to-ask' },
+  alternates: { canonical: '/find-help/what-to-ask' },
 };
 
 export default function Page() {
