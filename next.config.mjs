@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
+  output: 'standalone',
   async redirects() {
     // Earlier route names, kept working so no existing link breaks.
     return [
