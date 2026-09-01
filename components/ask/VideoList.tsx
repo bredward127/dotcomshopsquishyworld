@@ -3,20 +3,30 @@
 import { useEffect, useState } from 'react';
 import { ExternalIcon } from '@/components/Icons';
 import type { CategoryId } from '@/lib/ask/taxonomy';
-
-type Video = {
-  videoId: string;
-  title: string;
-  channel: string;
-  thumbnail: string;
-  url: string;
-};
+import { track } from '@/lib/analytics/track';
+import type { VideoResult } from '@/lib/ask/videoTypes';
 
 type State =
   | { kind: 'idle' }
   | { kind: 'loading' }
-  | { kind: 'ok'; videos: Video[] }
+  | { kind: 'ok'; videos: VideoResult[]; query: string }
   | { kind: 'unavailable'; reason: string };
+
+/**
+ * Click tracking reuses the existing outbound_resource_click event rather
+ * than introducing a new one: a YouTube click is an outbound resource click,
+ * and resource_id here is the fixed category, not the video ID - a raw
+ * YouTube video ID would not pass the analytics sanitizer's slug pattern
+ * anyway (it can contain letters, digits, hyphens, and underscores in mixed
+ * case), and identifying which specific video someone watched is not
+ * something this event is meant to capture.
+ */
+function trackVideoClick(category: CategoryId) {
+  track('outbound_resource_click', {
+    resource_id: `youtube-${category}`,
+    destination_host: 'www.youtube.com',
+  });
+}
 
 export default function VideoList({ category }: { category: CategoryId | null }) {
   const [state, setState] = useState<State>({ kind: 'idle' });
@@ -35,7 +45,7 @@ export default function VideoList({ category }: { category: CategoryId | null })
       .then((data) => {
         if (cancelled) return;
         if (data?.status === 'ok' && Array.isArray(data.videos)) {
-          setState({ kind: 'ok', videos: data.videos });
+          setState({ kind: 'ok', videos: data.videos, query: data.query ?? '' });
         } else {
           setState({ kind: 'unavailable', reason: data?.reason ?? 'No videos to show.' });
         }
@@ -92,6 +102,7 @@ export default function VideoList({ category }: { category: CategoryId | null })
                   href={video.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => category && trackVideoClick(category)}
                   className="group flex h-full gap-3 rounded-card border border-mist-400 p-3 transition-colors hover:border-teal hover:bg-mist-200"
                 >
                   {/* Remote YouTube thumbnail: plain img avoids configuring a
@@ -123,6 +134,19 @@ export default function VideoList({ category }: { category: CategoryId | null })
               </li>
             ))}
           </ul>
+
+          {state.query && (
+            <a
+              href={`https://www.youtube.com/results?search_query=${encodeURIComponent(state.query)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => category && trackVideoClick(category)}
+              className="mt-3 inline-flex items-center gap-1.5 text-sm text-teal underline underline-offset-4 hover:text-navy"
+            >
+              See more on YouTube
+              <ExternalIcon className="h-3.5 w-3.5" />
+            </a>
+          )}
         </>
       )}
     </section>

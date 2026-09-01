@@ -25,9 +25,11 @@ export default function DirectoryBrowser({ providers, examples }: Props) {
   const [showExamples, setShowExamples] = useState(false);
 
   const hasRealData = providers.length > 0;
-  const active = hasRealData ? providers : showExamples ? examples : [];
 
-  const results = useMemo(() => filterProviders(active, filters), [active, filters]);
+  const results = useMemo(() => {
+    const active = hasRealData ? providers : showExamples ? examples : [];
+    return filterProviders(active, filters);
+  }, [hasRealData, providers, showExamples, examples, filters]);
   const filtersActive = hasActiveFilters(filters);
 
   // Report which filter dimensions were used, never the typed city or ZIP.
