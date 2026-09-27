@@ -20,6 +20,11 @@ export const EVENT_NAMES = [
   'submit_lead_request',
   'view_for_providers',
   'provider_interest_submit',
+  'view_quiz',
+  'quiz_start',
+  'quiz_step',
+  'quiz_complete',
+  'affiliate_click',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
@@ -54,6 +59,14 @@ export const EVENT_PARAMS: Record<EventName, Record<string, ParamKind>> = {
   submit_lead_request: { provider_slug: 'slug' },
   view_for_providers: {},
   provider_interest_submit: { method: 'enum' },
+  // Sensory Match quiz. Individual answers are never sent: the audience
+  // question touches on stress and anxiety, so only the step number and the
+  // resulting product-feel profile (a fixed four-value vocabulary) leave the site.
+  view_quiz: {},
+  quiz_start: {},
+  quiz_step: { step: 'count' },
+  quiz_complete: { persona: 'enum' },
+  affiliate_click: { product_id: 'slug', slot: 'enum', persona: 'enum', destination_host: 'host' },
 };
 
 export function isEventName(value: unknown): value is EventName {

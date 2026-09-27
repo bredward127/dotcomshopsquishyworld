@@ -29,6 +29,10 @@ export default function RouteEvents() {
       track('view_resource', { resource_id: 'resources-index' }, { once: true });
       return;
     }
+    if (pathname === '/quiz') {
+      track('view_quiz', {}, { once: true });
+      return;
+    }
     if (pathname === '/for-providers') {
       track('view_for_providers', {}, { once: true });
       return;

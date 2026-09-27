@@ -10,20 +10,25 @@ import {
 } from './events.ts';
 
 describe('event allowlist', () => {
-  test('exactly the twelve approved events are defined', () => {
-    assert.equal(EVENT_NAMES.length, 12);
+  test('exactly the seventeen approved events are defined', () => {
+    assert.equal(EVENT_NAMES.length, 17);
     assert.deepEqual([...EVENT_NAMES].sort(), [
+      'affiliate_click',
       'click_provider_phone',
       'click_provider_website',
       'directory_search',
       'outbound_resource_click',
       'provider_interest_submit',
+      'quiz_complete',
+      'quiz_start',
+      'quiz_step',
       'start_ask_flow',
       'start_lead_request',
       'submit_lead_request',
       'view_for_providers',
       'view_home',
       'view_provider',
+      'view_quiz',
       'view_resource',
     ]);
   });

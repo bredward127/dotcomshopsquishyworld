@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ConsentBanner from '@/components/analytics/ConsentBanner';
 import RouteEvents from '@/components/analytics/RouteEvents';
 import { site, absoluteUrl } from '@/lib/site';
@@ -69,17 +67,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col">
-        <a href="#main" className="skip-link">
-          Skip to main content
-        </a>
-
-        <Header />
-
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-
-        <Footer />
+        {/* Header, footer, and <main> live in each route group's layout:
+            (site) carries the Sensory Access Michigan chrome, (quiz) the
+            SquishyWorld funnel chrome. */}
+        {children}
 
         <ConsentBanner />
         <RouteEvents />

@@ -76,6 +76,21 @@ export default function PrivacyPage() {
             </p>
           )}
 
+          <h2>The Sensory Match quiz</h2>
+          <p>
+            The quiz at /quiz saves the options you picked in this browser&rsquo;s local storage (under
+            sw.quiz.v1), so you can see your result again when you come back. It never leaves your
+            device, and choosing Retake quiz deletes it. If you allowed measurement, we record only
+            that a step was answered and which of four product-feel profiles you got, never the
+            individual answers.
+          </p>
+          <p>
+            Product buttons on the quiz open Amazon. Those links carry our Associates tag and a short
+            code naming the profile, the results slot, and, if you allowed measurement and arrived
+            from a campaign, the campaign name. Nothing you typed or answered is included. What
+            Amazon does after you arrive is covered by Amazon&rsquo;s own privacy notice.
+          </p>
+
           <h2>Hosting</h2>
           <p>
             The site is served by a third-party hosting provider that keeps standard server logs,

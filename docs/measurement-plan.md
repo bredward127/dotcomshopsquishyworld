@@ -45,6 +45,11 @@ fires without it.
 | `submit_lead_request` | Lead form submitted | `provider_slug` | **Not implemented** — no lead form exists yet |
 | `view_for_providers` | `/for-providers` viewed | *(none)* | Is the provider pitch getting seen? |
 | `provider_interest_submit` | Provider contact link used | `method` (`mailto`) | Are providers actually reaching out? |
+| `view_quiz` | `/quiz` viewed | *(none)* | Is paid and organic traffic reaching the quiz? |
+| `quiz_start` | First quiz answer chosen | *(none)* | What share of visitors engage with the quiz? |
+| `quiz_step` | Any quiz answer chosen | `step` (1-4) | Where do people drop out of the quiz? |
+| `quiz_complete` | Results shown after the analyzing screen | `persona` (`calm`, `tactile`, `compression`, `focus`) | Which profiles do visitors land in? |
+| `affiliate_click` | A quiz product link clicked | `product_id`, `slot` (`best`, `quiet`, `multipack`, `alt`, `header`), `persona`, `destination_host` | Which results tier and products earn the click? |
 
 ### Deliberately not sent
 
@@ -52,6 +57,7 @@ fires without it.
 |---|---|
 | The question typed on `/ask` | Free text, may contain health information about a child |
 | The city/ZIP typed into the directory | Quasi-identifying; `has_location` answers the question instead |
+| Individual quiz answers | The audience question touches on stress and anxiety; only the step number and the four-value profile are sent |
 | Any email address or phone number | Directly identifying |
 | Provider phone numbers | Not needed; `provider_slug` identifies the listing |
 | Full outbound URLs | Hostname only, so query strings cannot carry anything along |
@@ -159,3 +165,13 @@ dropping in a snippet.
 
 No campaign has been created, activated, or funded. No budget, bid, audience,
 or ad exists. Nothing in this repository can spend money.
+
+## Affiliate sub-tracking (quiz)
+
+Quiz product links carry Amazon's `ascsubtag` in the form
+`sw_<persona>_<slot>[_<utm_source>_<utm_campaign>]`, built in
+`lib/quiz/affiliate.ts`. Campaign tokens are only included when analytics
+consent was granted (they come from `readAttribution`). This lets Associates
+reports split earnings by profile, results tier, and campaign without any
+analytics event carrying revenue data. The tag itself comes from
+`NEXT_PUBLIC_AMAZON_TAG` (default `top100blog-20`).

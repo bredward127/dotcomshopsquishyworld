@@ -108,6 +108,7 @@ export const navGroups: NavGroup[] = [
  */
 export const standaloneLinks: NavLink[] = [
   { label: 'Ask a question', href: '/ask', description: 'Where to find answers on this site today.' },
+  { label: 'Sensory Match quiz', href: '/quiz', description: 'Four questions to match squishies and fidgets to how you like to squeeze.' },
   { label: 'For an adult', href: '/for-adults', description: 'Information for adults considering their own sensory needs.' },
 ];
 

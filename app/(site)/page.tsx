@@ -35,6 +35,13 @@ export default function HomePage() {
               Find local help
             </Link>
           </div>
+          <p className="mt-6 text-sm text-ink-muted">
+            Looking for a squishy or fidget?{' '}
+            <Link href="/quiz" className="font-semibold text-teal underline-offset-2 hover:underline">
+              Take the 60-second Sensory Match quiz
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
