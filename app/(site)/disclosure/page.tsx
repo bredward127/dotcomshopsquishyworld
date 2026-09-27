@@ -35,7 +35,7 @@ export default function DisclosurePage() {
           <p>
             Quiz results come from your four answers and a fixed scoring formula in this site&rsquo;s
             source code. Commission rates do not enter into it and no brand pays for a placement.
-            Prices shown are typical ranges; the retailer sets the actual price.
+            Prices are not shown on this site; each product button opens the retailer&rsquo;s live price.
           </p>
 
           <h2>What is planned</h2>

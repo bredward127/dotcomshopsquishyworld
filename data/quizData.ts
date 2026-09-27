@@ -8,8 +8,9 @@
  * Honesty rules for this file:
  * - `rating` and `reviewCount` are optional and left unset. They render only
  *   when filled with figures copied from a live listing, never invented ones.
- * - `priceRange` is a typical category range, shown as "Typical price".
- *   The CTA always sends the visitor to the live price.
+ * - No prices are stored or shown. Amazon limits displaying prices that do
+ *   not come from its Product Advertising API, so every CTA reads
+ *   "See price on Amazon" and opens the live listing.
  * - Until a specific listing is chosen, `amazonQuery` sends the visitor to a
  *   tagged Amazon search. Set `asin` to link a single product page instead.
  */
@@ -71,7 +72,6 @@ export interface ProductRecommendation {
   badge: string;
   rating?: number;
   reviewCount?: number;
-  priceRange: string;
   description: string;
   traits: Trait[];
   /** Short reasons shown under "Why it matches". */
@@ -295,7 +295,6 @@ export const products: ProductRecommendation[] = [
     id: 'silent-texture-cube',
     name: 'Silent Texture Fidget Cube',
     badge: 'Meeting-safe',
-    priceRange: '$8–$14',
     description: 'Six soft-touch faces of ridges, nubs, and rollers with no clicks.',
     traits: ['focus', 'tactile'],
     highlights: ['Makes no sound', 'Fits in one palm', 'Different texture on every side'],
@@ -309,7 +308,6 @@ export const products: ProductRecommendation[] = [
     id: 'desk-stress-ball-set',
     name: 'Soft-Grip Desk Stress Balls',
     badge: 'Desk favorite',
-    priceRange: '$9–$16',
     description: 'Palm-sized foam balls with a matte finish that stays quiet under pressure.',
     traits: ['focus', 'calm'],
     highlights: ['Silent squeeze', 'Matte, non-sticky finish', 'Easy one-hand use'],
@@ -324,7 +322,6 @@ export const products: ProductRecommendation[] = [
     id: 'slow-rise-mochi',
     name: 'Slow-Rise Memory Foam Squishy',
     badge: 'Softest pick',
-    priceRange: '$7–$13',
     description: 'Pillowy foam that sinks slowly under the thumb and rises back over seconds.',
     traits: ['calm', 'focus'],
     highlights: ['Very slow rise', 'Pocket-sized', 'Silent'],
@@ -338,7 +335,6 @@ export const products: ProductRecommendation[] = [
     id: 'plush-squish-pal',
     name: 'Plush-Covered Squish Pal',
     badge: 'Cozy pick',
-    priceRange: '$12–$22',
     description: 'A soft fabric outer over a squeezable core. Warm to hold, never tacky.',
     traits: ['calm', 'compression'],
     highlights: ['Fabric outer, no residue', 'Great for bedtime', 'Holds up to hugging'],
@@ -353,7 +349,6 @@ export const products: ProductRecommendation[] = [
     id: 'heavy-resistance-ball',
     name: 'Heavy-Resistance Squeeze Ball',
     badge: 'Firmest pick',
-    priceRange: '$9–$18',
     description: 'Dense, thick-walled ball built to take a full-strength grip and bounce back.',
     traits: ['compression', 'focus'],
     highlights: ['High resistance', 'Tear-resistant shell', 'Silent'],
@@ -367,7 +362,6 @@ export const products: ProductRecommendation[] = [
     id: 'jumbo-two-hand-squishy',
     name: 'Jumbo Two-Hand Squishy',
     badge: 'Big squeeze',
-    priceRange: '$15–$28',
     description: 'A large, dense desk centerpiece that gives both hands real work.',
     traits: ['compression', 'calm'],
     highlights: ['Two-handed size', 'Deep, slow compression', 'Stays put on a desk'],
@@ -382,7 +376,6 @@ export const products: ProductRecommendation[] = [
     id: 'water-bead-gel-ball',
     name: 'Water-Bead Gel Squeeze Ball',
     badge: 'Most squelchy',
-    priceRange: '$7–$14',
     description: 'A clear, stretchy shell packed with gel beads you can see and feel shift.',
     traits: ['tactile', 'calm'],
     highlights: ['Cool gel feel', 'Visual and tactile', 'Wipes clean'],
@@ -396,7 +389,6 @@ export const products: ProductRecommendation[] = [
     id: 'washable-textured-set',
     name: 'Washable Textured Squeeze Set',
     badge: 'Easy clean',
-    priceRange: '$10–$18',
     description: 'Bumpy, spiky, and ridged silicone shapes that go straight under the tap.',
     traits: ['tactile', 'compression'],
     highlights: ['Rinse-clean silicone', 'No dust or lint', 'Several textures'],
@@ -411,7 +403,6 @@ export const products: ProductRecommendation[] = [
     id: 'mini-squishy-variety-pack',
     name: 'Mini Squishy Variety Pack',
     badge: 'Best value',
-    priceRange: '$12–$20',
     description: 'A bag of small slow-rise squishies. Keep one in every room and backpack.',
     traits: ['calm', 'tactile'],
     highlights: ['Many pieces, one price', 'Pocket-sized', 'Classroom sharing'],
@@ -425,7 +416,6 @@ export const products: ProductRecommendation[] = [
     id: 'stress-ball-multipack',
     name: 'Stress Ball Resistance Multi-Pack',
     badge: 'Best value',
-    priceRange: '$12–$22',
     description: 'Soft, medium, and firm balls in one set, so every grip level is covered.',
     traits: ['compression', 'focus'],
     highlights: ['Three resistance levels', 'Silent', 'Share at home or work'],
@@ -439,7 +429,6 @@ export const products: ProductRecommendation[] = [
     id: 'sensory-fidget-bundle',
     name: 'Sensory Fidget Bundle',
     badge: 'Best value',
-    priceRange: '$15–$25',
     description: 'A mixed kit of gel, textured, and stretchy fidgets for trying everything.',
     traits: ['tactile', 'focus'],
     highlights: ['Wide texture mix', 'Find a favorite fast', 'Good for groups'],

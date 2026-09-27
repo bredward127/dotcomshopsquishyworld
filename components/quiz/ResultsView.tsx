@@ -189,7 +189,7 @@ export default function ResultsView({ result, answers, linkFor, savedAt, onRetak
                     <span className="flex-1 py-3">
                       <span className="block font-display font-semibold text-plum">{p.name}</span>
                       <span className="block text-sm text-plum-muted">
-                        {p.priceRange} · <span className="underline-offset-2 group-hover:underline">Check price</span>
+                        <span className="underline-offset-2 group-hover:underline">See price on Amazon</span>
                       </span>
                     </span>
                     <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-lavender-600" />

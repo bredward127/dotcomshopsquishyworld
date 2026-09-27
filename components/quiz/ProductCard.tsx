@@ -95,9 +95,6 @@ export default function ProductCard({ product, slot, href, persona }: Props) {
         </ul>
 
         <div className="mt-auto pt-6">
-          <p className={`text-sm ${s.muted}`}>
-            Typical price <span className={`font-bold ${s.name}`}>{product.priceRange}</span>
-          </p>
           <a
             href={href}
             target="_blank"
@@ -110,9 +107,9 @@ export default function ProductCard({ product, slot, href, persona }: Props) {
                 destination_host: hostOf(href) ?? undefined,
               })
             }
-            className={`mt-3 flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-[15px] font-extrabold transition active:scale-[0.98] ${s.cta}`}
+            className={`flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-[15px] font-extrabold transition active:scale-[0.98] ${s.cta}`}
           >
-            Check price on Amazon
+            See price on Amazon
             <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
           </a>
           <p className={`mt-2 text-center text-xs ${s.muted}`}>Affiliate link · opens Amazon in a new tab</p>
