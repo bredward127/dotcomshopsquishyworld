@@ -75,6 +75,16 @@ fires without it.
 - **Disclosure:** `/privacy` describes what loads, what it collects, and how to
   decline.
 
+## Vercel Web Analytics
+
+- Loaded in the root layout via `components/analytics/VercelAnalytics.tsx`.
+- Cookieless, but held to the same consent rule: `beforeSend` drops every
+  event until analytics consent is granted.
+- URLs are scrubbed by `lib/analytics/vercel.ts` to the path plus plain-token
+  `utm_*` values. Every other query parameter and the hash are removed.
+- Page views only. Vercel custom events need a Pro plan and are not used; quiz
+  and affiliate events stay in Google Analytics.
+
 ## Attribution (UTM and gclid)
 
 - Captured **only after** analytics consent is granted.

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import ConsentBanner from '@/components/analytics/ConsentBanner';
 import RouteEvents from '@/components/analytics/RouteEvents';
+import VercelAnalytics from '@/components/analytics/VercelAnalytics';
 import { site, absoluteUrl } from '@/lib/site';
 import './globals.css';
 
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <ConsentBanner />
         <RouteEvents />
+        <VercelAnalytics />
 
         <script
           type="application/ld+json"

@@ -43,6 +43,13 @@ export default function PrivacyPage() {
                 this browser. To change it, clear this site&rsquo;s data in your browser settings
                 and the banner will ask again.
               </p>
+              <p>
+                The same Allow choice also turns on Vercel Web Analytics, our hosting provider&rsquo;s
+                page counter. It sets no cookies and records the page path, referring site, country,
+                and device type. Before anything is sent, the address is cut down to the page path
+                plus any utm_ campaign tags, so search text or anything else in a link never reaches
+                it. If you decline, it sends nothing.
+              </p>
 
               <h2>What we record, and what we never do</h2>
               <p>
