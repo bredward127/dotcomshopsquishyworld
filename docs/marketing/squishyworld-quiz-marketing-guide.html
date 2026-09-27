@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SquishyWorld Quiz Marketing Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0.45in 0.55in 0.5in; }
+  :root {
+    --cream: #FFF8EE; --cream2: #FBF0DF; --cream3: #F1E2CB;
+    --mint: #CFEFE0; --mint4: #86D3B2; --mint6: #2E8F6C;
+    --lav: #E5DCFB; --lav1: #F4F0FE; --lav6: #7757D6; --lav7: #5B3FB4;
+    --peach: #FFDCCB; --peach5: #EE8A63;
+    --plum: #241B35; --muted: #6E6480;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Nunito, system-ui, sans-serif; color: var(--plum); font-size: 9.6pt; line-height: 1.4; margin: 0; }
+  h1, h2, h3 { font-family: Fredoka, system-ui, sans-serif; line-height: 1.15; margin: 0; }
+  h2 { font-size: 19pt; margin-top: 3pt; margin-bottom: 2pt; }
+  h3 { font-size: 12pt; margin-top: 10pt; }
+  p { margin: 4pt 0; }
+  ul, ol { margin: 4pt 0; padding-left: 15pt; }
+  li { margin: 2pt 0; }
+  .muted { color: var(--muted); }
+  .eyebrow { font-size: 8pt; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--lav7); }
+  section { page-break-before: always; }
+  .cover { height: 9.9in; display: flex; flex-direction: column; justify-content: space-between; background: var(--cream); border-radius: 22pt; padding: 44pt 40pt; position: relative; overflow: hidden; }
+  .cover .blob { position: absolute; border-radius: 50%; filter: blur(2px); }
+  .cover h1 { font-size: 40pt; margin-top: 18pt; }
+  .cover h1 span { color: var(--lav6); }
+  .logo { display: flex; align-items: center; gap: 8pt; font-family: Fredoka; font-weight: 700; font-size: 16pt; }
+  .logo i { width: 22pt; height: 22pt; border-radius: 42%; background: linear-gradient(135deg, var(--mint), var(--lav), var(--peach)); display: inline-block; }
+  .logo b { color: var(--lav6); font-weight: 700; }
+  .pill { display: inline-block; background: #fff; border-radius: 999px; padding: 4pt 10pt; font-size: 8pt; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--lav7); }
+  .card { background: #fff; border: 1.5pt solid var(--cream3); border-radius: 12pt; padding: 9pt 12pt; margin: 6pt 0; page-break-inside: avoid; }
+  .card.mint { background: #F2FBF7; border-color: var(--mint); }
+  .card.lav { background: var(--lav1); border-color: var(--lav); }
+  .card.peach { background: #FFF6F1; border-color: var(--peach); }
+  .card.dark { background: var(--plum); color: var(--cream); border-color: var(--plum); }
+  .card.dark .muted { color: #cfc6dc; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8pt; }
+  .kpi { text-align: center; }
+  .kpi b { display: block; font-family: Fredoka; font-size: 20pt; color: var(--lav6); }
+  table { width: 100%; border-collapse: collapse; margin: 6pt 0; font-size: 8.8pt; page-break-inside: avoid; }
+  th { text-align: left; background: var(--cream2); font-weight: 800; }
+  th, td { padding: 3.5pt 6pt; border-bottom: 1pt solid var(--cream3); vertical-align: top; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 8.8pt; background: var(--cream2); padding: 1pt 4pt; border-radius: 4pt; }
+  .src { font-size: 8pt; color: var(--muted); }
+  .num { font-family: Fredoka; font-weight: 700; color: var(--lav6); font-size: 22pt; }
+  .check li { list-style: none; margin-left: -14pt; }
+  .check li::before { content: "☐  "; color: var(--mint6); font-weight: 800; }
+  .flow { display: flex; gap: 6pt; align-items: stretch; margin: 10pt 0; }
+  .flow div { flex: 1; background: #fff; border: 1.5pt solid var(--cream3); border-radius: 10pt; padding: 8pt; text-align: center; font-size: 9pt; }
+  .flow div b { display: block; font-family: Fredoka; font-size: 11pt; }
+  .flow span { align-self: center; color: var(--lav6); font-weight: 800; }
+  .tag { display: inline-block; border-radius: 999px; padding: 1pt 7pt; font-size: 8pt; font-weight: 800; }
+  .t-mint { background: var(--mint); color: #226E53; } .t-lav { background: var(--lav); color: var(--lav7); }
+  .t-peach { background: var(--peach); color: var(--plum); } .t-sky { background: #D4E7FF; color: #2C5E9E; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <span class="blob" style="width:260pt;height:260pt;background:var(--mint);opacity:.6;right:-80pt;top:-60pt"></span>
+  <span class="blob" style="width:220pt;height:220pt;background:var(--lav);opacity:.7;left:-70pt;bottom:120pt"></span>
+  <span class="blob" style="width:140pt;height:140pt;background:var(--peach);opacity:.6;right:40pt;bottom:40pt"></span>
+  <div style="position:relative">
+    <div class="logo"><i></i><span>Squishy<b>World</b></span></div>
+    <p style="margin-top:70pt"><span class="pill">Marketing Guide · 2026</span></p>
+    <h1>Filling the <span>Sensory Match</span> Quiz</h1>
+    <p style="font-size:14pt;max-width:380pt" class="muted">A practical playbook for driving traffic to shopsquishyworld.com/quiz, testing ad creative, and reading what the funnel tells you.</p>
+  </div>
+  <div style="position:relative" class="grid3">
+    <div class="card kpi"><b>4</b>questions</div>
+    <div class="card kpi"><b>4</b>tactile profiles</div>
+    <div class="card kpi"><b>3</b>picks per result</div>
+  </div>
+  <p style="position:relative" class="src">Ad-testing benchmarks in this guide are quoted from <em>Creative Benchmarks 2026 (LLM Edition)</em>: Meta ads, Sept 2025 to Jan 2026, 578,750 creatives, 6,015 advertisers, $1.29B spend. They are aggregated associations, not guarantees, and they measure spend, not revenue or ROAS.</p>
+</div>
+
+<!-- 1 FUNNEL -->
+<section>
+  <p class="eyebrow">01 · The funnel</p>
+  <h2>What you are sending people into</h2>
+  <p>The quiz is a single landing page. Every ad, post, and link should point at <code>/quiz</code>, never straight at Amazon.</p>
+  <div class="flow">
+    <div><b>Ad or post</b>UTM-tagged link</div><span>→</span>
+    <div><b>Hero</b>"Find your perfect sensory match in 60 seconds"</div><span>→</span>
+    <div><b>4 questions</b>who · feel · where · care</div><span>→</span>
+    <div><b>1.5s analysis</b>builds anticipation</div><span>→</span>
+    <div><b>Results</b>persona + 3 picks</div><span>→</span>
+    <div><b>Amazon</b>tagged affiliate click</div>
+  </div>
+
+  <h3>The four profiles are your four audiences</h3>
+  <table>
+    <tr><th>Profile</th><th>Who it describes</th><th>Best Match leans toward</th></tr>
+    <tr><td><span class="tag t-sky">Quiet Desk Focus</span></td><td>Remote workers, students, anyone with restless hands in meetings</td><td>Silent texture cubes, matte stress balls</td></tr>
+    <tr><td><span class="tag t-lav">Slow-Rise Calm Keeper</span></td><td>Parents of younger kids, bedtime and car-ride routines, classroom calm corners</td><td>Slow-rise foam, plush-covered squishies</td></tr>
+    <tr><td><span class="tag t-peach">Deep Compression Seeker</span></td><td>People who squeeze hard: end-of-day decompression, grip-strength fidgeters</td><td>Heavy-resistance balls, jumbo two-hand squishies</td></tr>
+    <tr><td><span class="tag t-mint">Texture Explorer</span></td><td>Sensory-seeking kids and adults, collectors, novelty lovers</td><td>Water-bead gel balls, washable textured sets</td></tr>
+  </table>
+
+  <h3>Why a quiz converts</h3>
+  <ul>
+    <li><b>It replaces a choice with an answer.</b> Amazon search gives thousands of near-identical squishies. The quiz returns three, with reasons.</li>
+    <li><b>Commitment builds.</b> Four taps and a short wait make the result feel earned. Protect that: never add an email gate in front of results.</li>
+    <li><b>Three tiers catch three budgets.</b> Best Match is the pick, Quiet Alternative handles the "but it's for school" objection, and Multi-Pack Value covers classrooms and gifting.</li>
+  </ul>
+
+  <div class="card lav">
+    <b>Before you spend a dollar</b>
+    <ul class="check">
+      <li>Replace each product's <code>amazonQuery</code> with a real <code>asin</code> in <code>data/quizData.ts</code> once you have picked listings you trust.</li>
+      <li>Confirm <code>NEXT_PUBLIC_AMAZON_TAG</code> (default <code>top100blog-20</code>) is your live Associates tag.</li>
+      <li>Click every CTA on a phone and check that the tag and <code>ascsubtag</code> arrive in the Amazon URL.</li>
+      <li>Read the compliance page (section 07) in full.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2 MEASUREMENT -->
+<section>
+  <p class="eyebrow">02 · Measurement</p>
+  <h2>Reading the funnel</h2>
+  <p>The site sends five quiz events to Google Analytics / Google Ads, only after a visitor clicks <b>Allow</b> on the consent banner. Expect your analytics numbers to undercount real traffic, and compare stages as ratios rather than absolute counts.</p>
+  <table>
+    <tr><th>Event</th><th>Fires when</th><th>Ratio to watch</th><th>If it's weak, look at</th></tr>
+    <tr><td><code>view_quiz</code></td><td>/quiz loads</td><td>Ad clicks → views</td><td>Page speed, link mismatch, bot traffic</td></tr>
+    <tr><td><code>quiz_start</code></td><td>First answer tapped</td><td>Views → starts</td><td>Hero headline, ad-to-page message match</td></tr>
+    <tr><td><code>quiz_step</code></td><td>Each answer (step 1-4)</td><td>Step 1 → step 4</td><td>The question where people stop</td></tr>
+    <tr><td><code>quiz_complete</code></td><td>Results shown</td><td>Starts → completes</td><td>Should be close to step 4; a gap means a bug</td></tr>
+    <tr><td><code>affiliate_click</code></td><td>Any product CTA</td><td>Completes → clicks, by <code>slot</code></td><td>Product fit, card copy, price range</td></tr>
+  </table>
+
+  <h3>Revenue lives in Amazon Associates, split by sub-tag</h3>
+  <p>Every product link carries an <code>ascsubtag</code> like <code>sw_compression_best_meta_springlaunch</code>:</p>
+  <div class="grid2">
+    <div class="card"><b>sw_</b> site prefix<br><b>compression</b> profile<br><b>best</b> slot (best · quiet · multipack · alt · header)</div>
+    <div class="card"><b>meta</b> utm_source<br><b>springlaunch</b> utm_campaign<br><span class="muted">Included only when the visitor allowed measurement. Other clicks still carry profile and slot.</span></div>
+  </div>
+  <p>In Associates Central, open the tracking-ID report and break it down by sub-tag. That gives earnings per profile, per results tier, and per campaign, which analytics alone cannot.</p>
+
+  <h3>UTM rules</h3>
+  <ul>
+    <li>Use lowercase letters and numbers only: <code>utm_source=meta</code>, <code>utm_campaign=springlaunch</code>. Punctuation is stripped from the sub-tag, and each part is cut to 24 characters.</li>
+    <li>Sources: <code>meta</code>, <code>tiktok</code>, <code>pinterest</code>, <code>google</code>, <code>newsletter</code>, <code>organic</code>.</li>
+    <li>Put the creative ID in <code>utm_content</code> (for example <code>c014</code>). It appears in analytics, not in the sub-tag.</li>
+  </ul>
+
+  <h3>Weekly scorecard</h3>
+  <table>
+    <tr><th>Week</th><th>Spend</th><th>Quiz views</th><th>Start %</th><th>Complete %</th><th>Click %</th><th>Associates earnings</th><th>Top profile</th><th>New creatives</th></tr>
+    <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="muted">Set your own baselines from the first ~500 quiz views before judging changes. This guide gives no target conversion rates because no reliable benchmark exists for this exact funnel.</p>
+</section>
+
+<!-- 3 BENCHMARKS -->
+<section>
+  <p class="eyebrow">03 · What the benchmarks say</p>
+  <h2>Creative testing is a numbers game</h2>
+  <p>The takeaways below come from <em>Creative Benchmarks 2026</em>. A "winner" there means an ad that spent at least <b>10× its account's median ad</b> and at least <b>$500</b>. All findings are associations across accounts, measured by spend, and they come from a window that includes BFCM.</p>
+
+  <div class="grid3">
+    <div class="card dark"><span class="num" style="color:var(--mint4)">~5%</span><br>of ads become winners. Low hit rates are normal, not a sign of weak creative.</div>
+    <div class="card dark"><span class="num" style="color:var(--mint4)">~55%</span><br>of all spend goes to winning ads. About 28% goes to mid-range and 17% to losers.</div>
+    <div class="card dark"><span class="num" style="color:var(--mint4)">1 in 10–13</span><br>is the most you should expect to be winners on average.</div>
+  </div>
+
+  <h3>Volume is associated with more winners</h3>
+  <p>Accounts that launch more creatives per week tend to find more winners, including among advertisers with similar budgets. That doesn't prove more ads <em>cause</em> more winners, but it is the most consistent pattern in the data. For a new affiliate funnel, the relevant tiers are Micro and Small:</p>
+  <table>
+    <tr><th>Monthly spend tier</th><th>Avg creatives / week (all)</th><th>Avg creatives / week (top 25%)</th><th>Avg hit rate</th><th>Winners / month (all → top 25%)</th></tr>
+    <tr><td>Micro (&lt;$10K)</td><td>2.8</td><td>4.8</td><td>4.0%</td><td>0.0 → 0.0</td></tr>
+    <tr><td>Small ($10K–$50K)</td><td>4.1</td><td>8.0</td><td>6.4%</td><td>0.2 → 0.5</td></tr>
+    <tr><td>Medium ($50K–$200K)</td><td>6.6</td><td>15.9</td><td>8.1%</td><td>0.7 → 2.0</td></tr>
+  </table>
+  <p class="src">Source: report charts CH-003 and CH-008. Top 25% = accounts in the top quartile by winner count within their tier.</p>
+
+  <h3>Mid-range ads are not failures</h3>
+  <p>In Micro accounts, about <b>46%</b> of creatives are mid-range (28+ days of spend, not winners), and they take about <b>46%</b> of spend. Winners take only about <b>23%</b> there. At small budgets, steady mid-range ads carry the account, so don't switch off an ad that keeps spending just because it isn't a breakout.</p>
+  <p class="src">Source: CH-005 and CH-006, Micro tier: loser 50.2% / mid 46.0% / winner 3.7% of creatives; 31.5% / 45.6% / 23.0% of spend.</p>
+
+  <h3>Hit rate is not a report card</h3>
+  <p>A high hit rate can simply mean too little testing. Judge the program on <b>winners per month</b> and <b>earnings per sub-tag</b>, not on the share of ads that worked.</p>
+
+  <h3>Formats and hooks that show up among winners</h3>
+  <ul>
+    <li><b>Offer-first banners and demos</b> rank near the top on both hit rate and spend-use ratio (scale formats).</li>
+    <li><b>Text-forward assets</b> (text-only, product image with text, simple GIFs) appear among winners more often than many teams expect. Their strength is speed and clarity.</li>
+    <li><b>Unboxing, POV, and behind-the-scenes</b> formats have high hit rates but lower spend use.</li>
+    <li><b>Hooks with immediacy and clarity</b> (a concrete reason to act, price framing, newness) surface often. <b>Curiosity and confessional</b> hooks can stop the scroll.</li>
+  </ul>
+  <p class="src">Source: CH-009, CH-011, CH-012. Patterns are time-bound (holiday window) and vary by vertical. Test them; don't assume them.</p>
+</section>
+
+<!-- 4 CREATIVE PLAYBOOK -->
+<section>
+  <p class="eyebrow">04 · Creative playbook</p>
+  <h2>Angles, hooks, and formats</h2>
+  <p>Build each week's batch as <b>profile × format</b>. Four profiles and a few cheap formats give you enough variety to reach the 5-per-week pace without a studio.</p>
+
+  <div class="grid2">
+    <div class="card" style="border-color:#D4E7FF">
+      <span class="tag t-sky">Quiet Desk Focus</span>
+      <p><b>Angle:</b> busy hands, quiet room.</p>
+      <ul>
+        <li>"Your hands need something to do in meetings. Here's the silent one."</li>
+        <li>"4 questions to find a fidget nobody on the call will hear."</li>
+        <li>Demo: a squeeze next to a laptop mic with the waveform staying flat.</li>
+      </ul>
+    </div>
+    <div class="card lav">
+      <span class="tag t-lav">Slow-Rise Calm Keeper</span>
+      <p><b>Angle:</b> soft, slow, always within reach.</p>
+      <ul>
+        <li>Close-up slow-rise timelapse with the text "Watch it come back."</li>
+        <li>"The backpack squishy that survives the school run."</li>
+        <li>POV: bedtime wind-down, one squishy on the pillow.</li>
+      </ul>
+    </div>
+    <div class="card peach">
+      <span class="tag t-peach">Deep Compression Seeker</span>
+      <p><b>Angle:</b> the harder the squeeze, the better.</p>
+      <ul>
+        <li>"Most stress balls give up. This one pushes back."</li>
+        <li>Demo: full-grip squeeze, slow-motion rebound.</li>
+        <li>Confessional: "I've destroyed 6 stress balls. The quiz found the 7th."</li>
+      </ul>
+    </div>
+    <div class="card mint">
+      <span class="tag t-mint">Texture Explorer</span>
+      <p><b>Angle:</b> every surface is worth a poke.</p>
+      <ul>
+        <li>ASMR-style texture montage: gel, beads, nubs, stretch.</li>
+        <li>Unboxing a multi-pack: "Which one did the quiz pick?"</li>
+        <li>"Rinse it, squish it again. Washable textures only."</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Quiz-first creative (use for every profile)</h3>
+  <ul>
+    <li><b>Question as hook:</b> "Slow-rise, heavy squeeze, or gel? Take the 60-second quiz."</li>
+    <li><b>Result reveal:</b> screen-record the quiz on a phone, ending on the persona card.</li>
+    <li><b>Text-only static:</b> cream background, one line in Fredoka: "Find your squishy in 4 taps."</li>
+    <li><b>Offer-first framing without a fake discount:</b> "3 hand-matched picks. No email. Free." (the quiz is the offer).</li>
+  </ul>
+
+  <h3>Weekly batch template (Micro tier, ~5 new ads)</h3>
+  <table>
+    <tr><th>#</th><th>Format</th><th>Profile</th><th>Hook type</th><th>utm_content</th></tr>
+    <tr><td>1</td><td>Demo video (6–15s)</td><td>Rotate weekly</td><td>Concrete reason to act</td><td>c0xx</td></tr>
+    <tr><td>2</td><td>Text-only static</td><td>All (quiz hook)</td><td>Question</td><td>c0xx</td></tr>
+    <tr><td>3</td><td>Product image + text</td><td>Rotate weekly</td><td>Clarity / newness</td><td>c0xx</td></tr>
+    <tr><td>4</td><td>Quiz screen-record</td><td>Result reveal</td><td>Curiosity</td><td>c0xx</td></tr>
+    <tr><td>5</td><td>UGC / POV / unboxing</td><td>Rotate weekly</td><td>Confessional</td><td>c0xx</td></tr>
+  </table>
+</section>
+
+<!-- 5 CHANNELS -->
+<section>
+  <p class="eyebrow">05 · Channels</p>
+  <h2>Where the traffic comes from</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Meta (Facebook + Instagram): primary paid channel</h3>
+    <ul>
+      <li>Optimize for landing-page views or a custom conversion on <code>quiz_complete</code> once it has volume. Don't optimize for Amazon purchases, which you can't see.</li>
+      <li>Use broad targeting with creative doing the segmenting (see section 07 on health-based targeting).</li>
+      <li>One campaign, one ad set per budget test, new creatives added weekly. Retire only ads that stop spending, not steady mid-range ads.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">TikTok and Instagram Reels: organic first</h3>
+    <ul>
+      <li>Texture and slow-rise content is native to these feeds. Post the demo and ASMR cuts organically, then put paid spend behind the ones that pull.</li>
+      <li>Link-in-bio goes to <code>/quiz?utm_source=tiktok&amp;utm_campaign=bio</code>.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Pinterest: evergreen affiliate traffic</h3>
+    <ul>
+      <li>Pin boards per profile: "Quiet fidgets for the office", "Calm-down corner ideas", "Sensory toys for texture lovers".</li>
+      <li>Pins link to the quiz, not to Amazon, so every click passes through your tag and sub-tag.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Your own site: the Sensory Library</h3>
+    <ul>
+      <li>The home page already links to the quiz. Add a short, clearly labeled "Looking for a fidget?" callout to relevant library articles (proprioception, heavy work, classroom calm).</li>
+      <li>Keep the informational pages free of affiliate links, as the disclosure page promises. Link to the quiz instead.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Google Search: test carefully</h3>
+    <ul>
+      <li>Target generic intent such as "quiet fidget for office" or "slow rise squishy for kids".</li>
+      <li>Never bid on Amazon trademark terms (see section 07).</li>
+    </ul>
+  </div>
+
+  <h3>Suggested first-month budget split (Micro tier)</h3>
+  <table>
+    <tr><th>Channel</th><th>Share</th><th>Why</th></tr>
+    <tr><td>Meta creative testing</td><td>~70%</td><td>Fastest feedback on which profile and format pulls</td></tr>
+    <tr><td>Boosting top organic TikTok / Reels</td><td>~20%</td><td>Proven-in-feed creative, cheap to scale</td></tr>
+    <tr><td>Search experiments</td><td>~10%</td><td>Captures high-intent queries; learn before scaling</td></tr>
+  </table>
+  <p class="muted">These splits are a starting point, not a benchmark. Reallocate monthly using earnings per sub-tag.</p>
+</section>
+
+<!-- 6 CADENCE -->
+<section>
+  <p class="eyebrow">06 · Operating rhythm</p>
+  <h2>The weekly loop</h2>
+  <div class="grid2">
+    <div class="card mint"><b>Monday: read</b><br>Fill in the scorecard. Pull Associates earnings by sub-tag. Note which profile won the week.</div>
+    <div class="card lav"><b>Tuesday: make</b><br>Produce ~5 new creatives using the batch template, weighted toward the winning profile but never only that one.</div>
+    <div class="card peach"><b>Wednesday: launch</b><br>Add the new ads with fresh <code>utm_content</code> IDs. Leave steady spenders running.</div>
+    <div class="card"><b>Friday: tune the page</b><br>Check drop-off by <code>quiz_step</code>. Change at most one thing on /quiz per week so you can tell what worked.</div>
+  </div>
+
+  <h3>Page experiments worth running (one at a time)</h3>
+  <ol>
+    <li>Hero headline: "60 seconds" vs. "4 taps" vs. a profile-specific headline for each ad set.</li>
+    <li>Product picks: swap in real ASINs whose ratings you have checked yourself, then compare click rates by <code>slot</code>.</li>
+    <li>Results order on mobile: Best Match first (current) vs. Quiet Alternative first for classroom-heavy traffic.</li>
+    <li>Question 1 copy: test clearer "who is it for" options if step-1 drop-off is high.</li>
+  </ol>
+
+  <h3>Monthly review</h3>
+  <ul>
+    <li>Winners per month, compared with the tier table in section 03 (Micro top 25%: about 4.8 creatives per week).</li>
+    <li>Earnings by profile. Is one profile under-served by its product picks?</li>
+    <li>Refresh products: check that every ASIN is in stock and still well reviewed.</li>
+  </ul>
+</section>
+
+<!-- 7 COMPLIANCE -->
+<section>
+  <p class="eyebrow">07 · Compliance</p>
+  <h2>Rules that keep the account alive</h2>
+
+  <div class="card peach">
+    <h3 style="margin-top:0">Health claims: the biggest risk</h3>
+    <ul>
+      <li>Squishies are comfort and fidget tools. Never say or imply they treat, cure, or manage anxiety, ADHD, autism, or sensory processing disorder.</li>
+      <li>Say "for focus", "for fidgeting", or "a calming squeeze". Don't say "reduces anxiety" or "therapy tool".</li>
+      <li>Don't use badges like "Tested for Sensory Regulation" or "Non-Toxic" unless you hold documentation for that specific product. The quiz ships with verifiable trust badges instead.</li>
+    </ul>
+  </div>
+
+  <div class="card lav">
+    <h3 style="margin-top:0">Ad platform targeting and copy</h3>
+    <ul>
+      <li><b>Meta:</b> ad copy must not assert or imply personal attributes, including health. "Do you have anxiety?" is not allowed; "Restless hands in meetings?" is.</li>
+      <li><b>Google:</b> personalized-ads policy restricts health-based targeting and remarketing. Target intent (keywords, topics), not conditions.</li>
+      <li>Avoid audiences built from people who visited health-condition content on your site.</li>
+    </ul>
+  </div>
+
+  <div class="card mint">
+    <h3 style="margin-top:0">Amazon Associates</h3>
+    <ul>
+      <li>Keep the disclosure "As an Amazon Associate we earn from qualifying purchases" visible. The quiz shows it in the top strip and footer, and labels every CTA.</li>
+      <li>Send paid traffic to your own page (/quiz), not directly to Amazon links.</li>
+      <li>Don't bid on "Amazon" or Amazon trademark keywords, and don't put affiliate links in emails, PDFs, or offline material.</li>
+      <li><b>Prices:</b> Amazon's rules limit displaying Amazon prices that don't come from its Product Advertising API. The quiz shows <em>typical category ranges</em> and sends shoppers to the live price. If you'd rather avoid any ambiguity, remove the ranges or switch to the API.</li>
+      <li>Re-read the current Associates Program Operating Agreement before launch. It changes, and it is the final word.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">Honesty in creative</h3>
+    <ul>
+      <li>No invented reviews, ratings, "10,000+ happy customers" counts, or fake discounts. The FTC treats fabricated reviews and endorsements as deceptive.</li>
+      <li>UGC and creator content must disclose paid relationships (#ad or the platform's paid-partnership label).</li>
+      <li>The page promises that commission never picks the match. Keep it true: scoring is a fixed formula in <code>lib/quiz/scoring.ts</code>.</li>
+    </ul>
+  </div>
+
+  <p class="src">This guide is operational advice, not legal advice. For anything that touches health claims or children's products, get a review from someone qualified.</p>
+</section>
+
+</body>
+</html>
